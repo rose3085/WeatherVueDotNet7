@@ -7,6 +7,7 @@ using WeatherVueDotNet7.Data;
 using WeatherVueDotNet7.Model;
 using WeatherVueDotNet7.Services.AuthServices;
 using WeatherVueDotNet7.Services.ForecastServices;
+using Microsoft.AspNetCore.Cors;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -78,6 +79,15 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+//enable cors
+
+app.UseCors(builder =>
+{
+    builder.AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader();
+});
 
 app.UseAuthorization();
 

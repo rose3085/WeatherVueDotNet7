@@ -1,0 +1,59 @@
+:root {
+    --background-color: black;
+    --text-color: white;
+    --buttonCode-color: #999ede;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #494F55;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.toggleLogin {
+    display: flex;
+    background-color: #fFF;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    height: 500px;
+    margin-top: 5rem;
+    margin-left: 10rem;
+}
+.registerComponents {
+    margin-top: 2rem;
+    margin-left: 2rem;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 400px;
+}
+
+.registerform {
+    flex: 1;
+    display: flex;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 30px;
+    width: 500px;
+}
+.rightPart {
+    flex:1;
+}
+.leftPart {
+    flex: 2;
+}
+.userName {
+    margin-top: 1rem;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}

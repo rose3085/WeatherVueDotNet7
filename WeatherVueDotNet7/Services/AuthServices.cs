@@ -65,7 +65,9 @@ namespace WeatherVueDotNet7.Services.AuthServices
             return new AuthServiceResponseDto()
             {
                 IsSucceed = true,
-                Message = token
+                Message = "User login sucessful",
+                Token = token,
+                UserName= user.UserName,
             };
         }
 
@@ -152,7 +154,8 @@ namespace WeatherVueDotNet7.Services.AuthServices
             return new AuthServiceResponseDto()
             {
                 IsSucceed = true,
-                Message = "User Created Successfully"
+                Message = "User Created Successfully",
+                UserName = newUser.UserName,
             };
         }
 
