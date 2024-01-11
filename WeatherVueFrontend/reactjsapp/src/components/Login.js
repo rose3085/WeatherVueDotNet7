@@ -91,10 +91,8 @@ const Login = () => {
                 </div>
 
                     <div className="registerAccount">
-                    <h1 className="registerText">Don't
-                        have
-                        an
-                        account?</h1>
+                    <h1 className="registerText">
+                        Don'thave an account?</h1>
                     <br />
                     <br />
                     <button className="buttonRegister" onClick={handlePageChange}>Register</button>

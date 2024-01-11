@@ -7,6 +7,7 @@ using WeatherVueDotNet7.Data;
 using WeatherVueDotNet7.Model;
 using WeatherVueDotNet7.Services.AuthServices;
 using WeatherVueDotNet7.Services.ForecastServices;
+using WeatherVueDotNet7.Services.LocationServices;
 using Microsoft.AspNetCore.Cors;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +20,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAuthServices, AuthServices>();
 builder.Services.AddScoped<IForecastServices, ForecastServices>();
+builder.Services.AddScoped<ILocationServices, LocationServices>();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {

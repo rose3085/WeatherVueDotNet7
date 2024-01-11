@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
 using WeatherVueDotNet7.OpenWeatherMapModel;
 using WeatherVueDotNet7.Helper;
-using System;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.PixelFormats;
+
 
 namespace WeatherVueDotNet7.Services.ForecastServices
 {
@@ -80,6 +82,54 @@ namespace WeatherVueDotNet7.Services.ForecastServices
 
                 // handle exceptions
                 throw new Exception("error while fetching weather data", ex);
+            }
+        }
+
+        //public async Task<byte[]> GetWeatherMap(string layer, int z, int x, int y)
+        //{
+        //    try
+        //    {
+        //        using (HttpClient client = new HttpClient())
+        //        {
+        //            string idoWeather = Constants.OPEN_WEATHER_APP_ID;
+        //            string apiUrl = $"https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={idoWeather} ";
+        //            HttpResponseMessage response = await client.GetAsync(apiUrl);
+        //            if (response.IsSuccessStatusCode)
+        //            {
+        //                return await response.Content.ReadAsByteArrayAsync();
+        //            }
+        //            return null;
+        //        }
+        //    }
+        //    catch (Exception ex) { 
+        //        // handle exceptions
+        //        throw new Exception("error while fetching weather data", ex);
+        //    }
+        //}
+        public async Task<Image<Rgba32>> GetWeatherMap(string layer, int z, int x, int y)
+        {
+            try
+            {
+                using (HttpClient client = new HttpClient())
+                {
+                    string idoWeather = Constants.OPEN_WEATHER_APP_ID;
+                    string apiUrl = $"https://tile.openweathermap.org/map/{layer}/{z}/{x}/{y}.png?appid={idoWeather}";
+                    HttpResponseMessage response = await client.GetAsync(apiUrl);
+
+                    if (response.IsSuccessStatusCode)
+                    {
+                        Stream stream = await response.Content.ReadAsStreamAsync();
+                        return Image.Load<Rgba32>(stream);
+
+                    }
+
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                // handle exceptions
+                throw new Exception("Error while fetching weather data", ex);
             }
         }
     }

@@ -10,5 +10,7 @@ namespace WeatherVueDotNet7.Data
         {
 
         }
+
+        public DbSet<Location> Locations { get; set; }
     }
 }
