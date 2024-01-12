@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./Register.css";
-import { Link } from 'react-router-dom';
+import { useNavigate,Link } from 'react-router-dom';
 const Register = () => {
     const [email, setEmail] = useState("");
     const [userName, setUserName] = useState('');
@@ -9,7 +9,7 @@ const Register = () => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [data, setData] = useState([]);
-
+    const navigate = useNavigate();
 
 
 
@@ -28,11 +28,11 @@ const Register = () => {
             .then(response => {
                 if (response.ok) {
                     
-                    const name = data.userName;
-                    localStorage.setItem('userName', name);
+                    //const name = data.userName;
+                    //localStorage.setItem('userName', name);
 
-                    const jwtToken = data.token;
-                    document.cookie = `token=${jwtToken}; path=/;  secure; samesite=strict;`;
+                    //const jwtToken = data.token;
+                    //document.cookie = `token=${jwtToken}; path=/;  secure; samesite=strict;`;
                     return response.json();
 
 
@@ -43,6 +43,14 @@ const Register = () => {
             .then(data => {
                 console.log(data);
                 setData(data);
+                if(data.userName !=null)
+                {
+                const name = data.userName;
+                localStorage.setItem('userName', name);
+                navigate('/LoginSuccessful');
+                //const jwtToken = data.token;
+                //document.cookie = `token=${jwtToken}; path=/;  secure; samesite=strict;`;
+                }
             })
             .catch(error => {
                 console.error(error);

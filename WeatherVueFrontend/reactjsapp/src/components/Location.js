@@ -11,9 +11,14 @@ import React,{useState, useEffect} from 'react';
 
  
   
-    const getLocation = async() =>
-    {
-        // to check my current location
+    // const getLocation = async() =>
+    // {
+
+    useEffect(()=>
+        {
+
+       
+        // to check my current location and save to local storage
         if(navigator.geolocation)
         {
             navigator.geolocation.getCurrentPosition(
@@ -25,7 +30,12 @@ import React,{useState, useEffect} from 'react';
                     //const apiUrl = `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}&api_key=${apiKey}}`;
                     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
                     await fetch(apiUrl)
-                        .then(response => response.json())
+                        .then(response => 
+                            
+                            {
+                                if(response.ok){
+                                return response.json();
+                            }})
                         .then(data => {
                             if (data.results.length > 0) {
                                 const city = data.results[0].components.city;
@@ -53,7 +63,8 @@ import React,{useState, useEffect} from 'react';
         else{
             console.log('Geolocation is not supported by this browser.');
         }
-    };
+   
+},[]);
 
 
 
@@ -82,13 +93,14 @@ import React,{useState, useEffect} from 'react';
 
     return(
         <>
-        <button onClick={getLocation}> Hi
+        {/* <button onClick={getLocation}> Hi
         {location && city &&
         (
             <p>Your current location: {city.city}</p>
         )
 
-        }</button>
+        }</button> */}
+
 
         {/* <button onClick={sendLocationToServer}>
                 Heloooooo

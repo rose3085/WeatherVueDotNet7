@@ -1,6 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
+import LoginSuccessful from './LoginSuccessful';
+import Cookies from 'js-cookie';
 import "./Login.css";
+
 const Login = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
@@ -13,8 +16,8 @@ const Login = () => {
         navigate("/Register");
     }
   
-    const handleLogin = async (event) => {
-        event.preventDefault();
+    const handleLogin = (event) => {
+         event.preventDefault();
         const apiUrl = `https://localhost:7194/api/Auth/Login`;
         fetch(apiUrl,
             {
@@ -28,11 +31,11 @@ const Login = () => {
             .then(response => {
                 if (response.ok) {
 
-                    const name = data.userName;
-                    localStorage.setItem('userName', name);
+                    // const name = data.userName;
+                    // localStorage.setItem('userName', name);
 
-                    const jwtToken = data.token;
-                    document.cookie = `token=${jwtToken}; path=/;  secure; samesite=strict;`;
+                    // //const jwtToken = data.token;
+                    // document.cookie = `token=${data.token}; `;
                     return response.json();
 
                 }
@@ -40,15 +43,39 @@ const Login = () => {
                 throw new Error('Network response was not ok');
             })
             .then(data => {
-                console.log(data);
-                setData(data);
+                 setData(data); 
+                 console.log(data);
+                 if(data.token && data.userName != null)
+                 {
+                        const name = data.userName;
+                        localStorage.setItem('userName', name);
+
+                        //const jwtToken = data.token;
+                        document.cookie = `token=${data.token}; `;
+                    //  return response.json();
+                    
+                        navigate("/LoginSuccessful");
+                }
+            //   navigate("/Location");
+               
 
             })
             .catch(error => {
                 console.error(error);
             });
+      
     }
-   
+
+    useEffect(()=>
+    {
+        const cookieName = 'token';
+        if(Cookies.get(cookieName) !== undefined)
+            {
+                navigate('/CurrentWeather');
+            }
+    },[]);
+
+
     return (
         <section className="loginMain">
             <div className="toggleLogin">

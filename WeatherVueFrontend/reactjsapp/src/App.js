@@ -5,6 +5,7 @@ import './App.css';
 import Location from './components/Location';
 import WeatherMap from './components/WeatherMap';
 import CurrentWeather from './components/CurrentWeather';
+import LoginSuccessful from './components/LoginSuccessful';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
                   <Route path='/Register' element={<Register />}></Route>
                   <Route path='/Location' element={<Location/>}></Route>
                   <Route path='/WeatherMap' element={<WeatherMap />}></Route>
+                  <Route path='/LoginSuccessful' element={<LoginSuccessful />}></Route>
                   <Route path='/CurrentWeather' element={<CurrentWeather />}></Route>
           </Routes>
               </Router>
