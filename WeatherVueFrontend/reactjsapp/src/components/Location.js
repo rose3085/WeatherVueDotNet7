@@ -4,18 +4,45 @@ import React,{useState, useEffect} from 'react';
  {
 
     const [location, setLocation] = useState(null);
+    const [city, setCity] = useState(null);
     
-    const getLocation = () =>
+
+
+
+ 
+  
+    const getLocation = async() =>
     {
+        // to check my current location
         if(navigator.geolocation)
         {
             navigator.geolocation.getCurrentPosition(
-                (position) =>
-                {
+                 async (position) =>
+                { 
                     const {latitude, longitude} = position.coords;
                     setLocation({latitude, longitude});
-                    //https://geocode.maps.co/reverse?lat=latitude&lon=longitude&api_key=65a03f98cf3dc359812428hsl06bd35
-                    // sendLocationToServer(latitude, longitude);
+                     const apiKey = 'c7fee8cbe30d48d6be46999f591373c3';
+                    //const apiUrl = `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}&api_key=${apiKey}}`;
+                    const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+                    await fetch(apiUrl)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.results.length > 0) {
+                                const city = data.results[0].components.city;
+                                console.log('City:', city);
+                                setCity({city});
+                                
+                                localStorage.setItem('cityName', city);
+                                console.log();
+                                // sendLocationToServer(city);
+                            } else {
+                                console.error('City not found');
+                            }
+                        })
+                        .catch(error => {
+                            console.error('Error getting city:', error.message);
+                        });
+                  
                 },
                 (error)=>
                 {
@@ -27,17 +54,20 @@ import React,{useState, useEffect} from 'react';
             console.log('Geolocation is not supported by this browser.');
         }
     };
- 
 
-    // const sendLocationToServer =(latitude, longitude) =>
+
+
+    // const sendLocationToServer = async() =>
     // {
+    
+    //     const apiUrl = `https://localhost:7194/api/Location`;
 
-    //     fetch('/api/user/location', {
+    //     await fetch(apiUrl, {
     //         method: 'POST',
     //         headers: {
     //           'Content-Type': 'application/json',
     //         },
-    //         body: JSON.stringify({ latitude, longitude }),
+    //         body: JSON.stringify({city}),
     //       })
     //         .then(response => response.json())
     //         .then(data => {
@@ -48,15 +78,21 @@ import React,{useState, useEffect} from 'react';
     //         });
     // };
 
+
+
     return(
         <>
         <button onClick={getLocation}> Hi
-        {location &&
+        {location && city &&
         (
-            <p>Your current location: {location.latitude}, {location.longitude}</p>
+            <p>Your current location: {city.city}</p>
         )
 
         }</button>
+
+        {/* <button onClick={sendLocationToServer}>
+                Heloooooo
+        </button> */}
         </>
     );
  };

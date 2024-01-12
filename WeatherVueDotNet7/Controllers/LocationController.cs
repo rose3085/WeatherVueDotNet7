@@ -16,12 +16,12 @@ namespace WeatherVueDotNet7.Controllers
             _locationServices = locationServices;
         }
 
-        [HttpPost("{location}")]
+        //[HttpPost]
 
-        public async Task<IActionResult> SetLocation([FromBody]Location location)
-        {
-            var locationResult = await _locationServices.SetLocation(location);
-            return Ok(locationResult);
-        }
+        //public async Task<IActionResult> SetLocationAsync(Location location)
+        //{
+        //    var locationResult = await _locationServices.SetLocationAsync(location);
+        //    return Ok(locationResult);
+        //}
     }
 }

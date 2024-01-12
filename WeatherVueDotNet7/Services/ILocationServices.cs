@@ -5,6 +5,6 @@ namespace WeatherVueDotNet7.Services.LocationServices
 {
     public interface ILocationServices
     {
-        Task<List<Location>> SetLocation(Location location);
+        Task<Location> SetLocationAsync(Location location);
     }
 }

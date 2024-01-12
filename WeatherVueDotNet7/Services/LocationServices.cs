@@ -12,15 +12,11 @@ namespace WeatherVueDotNet7.Services.LocationServices
         {
             _context = context;
         }
-        public async Task<List<Location>> SetLocation(Location location)
+        public async Task<Location> SetLocationAsync(Location location)
         {
-
-            Location locations = new Location()
-            {
-                UserLocation = location.UserLocation,
-           };
-
-            return null;
+            await _context.Locations.AddAsync(location);
+            await _context.SaveChangesAsync();
+            return location;
         }
     }
 }
