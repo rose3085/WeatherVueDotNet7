@@ -3,12 +3,19 @@ using WeatherVueDotNet7.OpenWeatherMapModel;
 using WeatherVueDotNet7.Helper;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
+using WeatherVueDotNet7.Data;
 
 
 namespace WeatherVueDotNet7.Services.ForecastServices
 {
     public class ForecastServices : IForecastServices
     {
+
+        //private readonly DataContext _context;
+        //public ForecastServices(DataContext context)
+        //{
+        //    _context = ContextBz;
+        //}
         //private const string WeatherApiEndpoint = "https://api.weather.com/data/2.5/weather";
         //private readonly string _apiKey;
         //private object jsonconvert;

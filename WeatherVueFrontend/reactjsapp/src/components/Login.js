@@ -1,6 +1,5 @@
 import React, { useState,useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
-import LoginSuccessful from './LoginSuccessful';
 import Cookies from 'js-cookie';
 import "./Login.css";
 
@@ -71,7 +70,7 @@ const Login = () => {
         const cookieName = 'token';
         if(Cookies.get(cookieName) !== undefined)
             {
-                navigate('/CurrentWeather');
+                navigate('/Weather');
             }
     },[]);
 

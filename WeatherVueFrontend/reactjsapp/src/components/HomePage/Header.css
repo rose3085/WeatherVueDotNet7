@@ -1,0 +1,18 @@
+:root
+{
+    --text-color: #fff;
+    --background-colour:  lightcyan;
+    --button-background: #ebfffc;
+}
+
+.navigationBar
+{
+    margin-top:15px;
+    display:flex;
+   
+}
+.searchBarSection
+{
+    height:100px;
+    background:var(--background-colour);
+}

@@ -4,8 +4,10 @@ import {BrowserRouter as Router, Link , Route, Routes} from 'react-router-dom';
 import './App.css';
 import Location from './components/Location';
 import WeatherMap from './components/WeatherMap';
-import CurrentWeather from './components/CurrentWeather';
+import CurrentWeather from './components/HomePage/CurrentWeather';
 import LoginSuccessful from './components/LoginSuccessful';
+import Weather from './components/HomePage/Weather';
+
 
 function App() {
   return (
@@ -19,6 +21,7 @@ function App() {
                   <Route path='/WeatherMap' element={<WeatherMap />}></Route>
                   <Route path='/LoginSuccessful' element={<LoginSuccessful />}></Route>
                   <Route path='/CurrentWeather' element={<CurrentWeather />}></Route>
+                  <Route path='/Weather' element={<Weather />}></Route>
           </Routes>
               </Router>
     </div>
