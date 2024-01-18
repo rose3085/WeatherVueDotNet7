@@ -115,8 +115,19 @@ namespace WeatherVueDotNet7.Services.ForecastServices
         //}
         public async Task<Image<Rgba32>> GetWeatherMap(string layer, int z, int x, int y)
         {
+
             try
             {
+                if (string.IsNullOrEmpty(layer))
+                {
+                    throw new ArgumentException("Layer cannot be null or empty.", nameof(layer));
+                }
+
+                if (z < 0 || x < 0 || y < 0)
+                {
+                    throw new ArgumentException("Invalid zoom level or tile coordinates.");
+                }
+
                 using (HttpClient client = new HttpClient())
                 {
                     string idoWeather = Constants.OPEN_WEATHER_APP_ID;

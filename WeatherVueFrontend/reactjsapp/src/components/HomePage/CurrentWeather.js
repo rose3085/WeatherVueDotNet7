@@ -1,6 +1,6 @@
 import React,{useState,useEffect, useLayoutEffect} from 'react';
 import Sun1 from './Images/Sun1.png';
-
+import './CurrentWeather.css';
 
 const CurrentWeather = () =>
 {
