@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using WeatherVueDotNet7.Model;
-using WeatherVueDotNet7.OpenWeatherMapModel;
 
 namespace WeatherVueDotNet7.Data
 {

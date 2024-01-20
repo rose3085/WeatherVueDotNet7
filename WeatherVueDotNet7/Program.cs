@@ -3,12 +3,14 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using Microsoft.AspNetCore.Cors;
 using WeatherVueDotNet7.Data;
 using WeatherVueDotNet7.Model;
 using WeatherVueDotNet7.Services.AuthServices;
 using WeatherVueDotNet7.Services.ForecastServices;
 using WeatherVueDotNet7.Services.LocationServices;
-using Microsoft.AspNetCore.Cors;
+using WeatherVueDotNet7.Services.AirQualityServices;
+using WeatherVueDotNet7.Services.FiveDayForecast;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -21,6 +23,8 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IAuthServices, AuthServices>();
 builder.Services.AddScoped<IForecastServices, ForecastServices>();
 builder.Services.AddScoped<ILocationServices, LocationServices>();
+builder.Services.AddScoped<IFiveDayForecast, FiveDayForecast>();
+builder.Services.AddScoped<IAirQualityServices, AirQualityServices>();
 
 builder.Services.AddDbContext<DataContext>(options =>
 {
