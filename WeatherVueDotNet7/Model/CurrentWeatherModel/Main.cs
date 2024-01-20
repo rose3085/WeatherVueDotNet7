@@ -1,4 +1,4 @@
-﻿namespace WeatherVueDotNet7.OpenWeatherMapModel
+﻿namespace WeatherVueDotNet7.Model.CurrentWeatherModel
 {
     public class Main
     {

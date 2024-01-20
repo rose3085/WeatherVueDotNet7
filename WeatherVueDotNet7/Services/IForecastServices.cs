@@ -1,7 +1,6 @@
 ﻿using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp;
-using WeatherVueDotNet7.OpenWeatherMapModel;
-using static System.Net.Mime.MediaTypeNames;
+using WeatherVueDotNet7.Model.CurrentWeatherModel;
 
 namespace WeatherVueDotNet7.Services.ForecastServices
 {
@@ -10,5 +9,6 @@ namespace WeatherVueDotNet7.Services.ForecastServices
         Task<WeatherResponse> GetWeatherAsync(string city);
         //string GetWeatherMap(string city);
         Task<Image<Rgba32>> GetWeatherMap(string layer, int z, int x, int y);
+       
     }
 }

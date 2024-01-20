@@ -1,15 +1,16 @@
 ﻿using Newtonsoft.Json;
-using WeatherVueDotNet7.OpenWeatherMapModel;
 using WeatherVueDotNet7.Helper;
 using SixLabors.ImageSharp;
 using SixLabors.ImageSharp.PixelFormats;
 using WeatherVueDotNet7.Data;
+using WeatherVueDotNet7.Model.CurrentWeatherModel;
 
 
 namespace WeatherVueDotNet7.Services.ForecastServices
 {
     public class ForecastServices : IForecastServices
     {
+        
 
         //private readonly DataContext _context;
         //public ForecastServices(DataContext context)
@@ -91,6 +92,8 @@ namespace WeatherVueDotNet7.Services.ForecastServices
                 throw new Exception("error while fetching weather data", ex);
             }
         }
+        
+
 
         //public async Task<byte[]> GetWeatherMap(string layer, int z, int x, int y)
         //{

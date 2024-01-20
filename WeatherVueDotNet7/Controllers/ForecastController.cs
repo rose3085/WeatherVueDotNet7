@@ -34,6 +34,8 @@ namespace WeatherVueDotNet7.Controllers
             }
         }
 
+
+
         [HttpGet]
         [Route("weatherMap")]
         //public async Task<IActionResult> GetWeatherMap(string layer, int x, int y, int z)
