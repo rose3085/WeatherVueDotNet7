@@ -3,6 +3,7 @@ import {IconContext} from "react-icons";
 import Header from './Header';
 import CurrentWeather from './CurrentWeather';
 import FiveDayForecast from './FiveDayForecast';
+import "./Weather.css";
 
 const Weather = () =>
 {
@@ -10,10 +11,14 @@ const Weather = () =>
     return (
         <section>
             <div className={"pageWrap"}>
-            <Header/>
-            <div className="currentWeatherData">
-                <CurrentWeather/></div>
+            <div className="mainPage">
+                <div className="weatherToday">
+                    <Header/>
+                     <div className="currentWeatherData">
+                    <CurrentWeather/></div>
+                </div>
             <FiveDayForecast/>
+            </div>
             </div>
         </section>
     );

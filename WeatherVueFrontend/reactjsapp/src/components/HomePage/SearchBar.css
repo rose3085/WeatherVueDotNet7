@@ -15,25 +15,26 @@ body
     display:flex;
     background:var(--background-colour);
     border-radius: 30px;
-    width:80%;
+    width:100%;
 }
 .searchInput
 {
-    border-color:var(--background-colour);
+    border-color:transparent;
     margin-top:1rem;
     margin-left:1rem;
     background:var(--background-colour);
     width:100%;
+    outline: none;
 }
 .searchButton
 {
    border-color:transparent;
    background:var(--background-colour);
     border-radius: 50%;
-    margin-top:1rem;
+    margin-top:0.5rem;
     height:50px;
     padding: 1px 2px;
-    margin-left:31rem;
+    margin-left:3rem;
     margin-right:0.5rem;
     cursor: pointer;
 } 

@@ -40,7 +40,8 @@ const CurrentWeather = () =>
             
                 console.log(data);
                 console.log(data.main?.temp);
-                setTemperature(data.main?.temp);  // Set the temperature from the API response
+                const temp = Math.floor((data.main?.temp - 273.15) * 100) / 100;
+                setTemperature(temp);  // Set the temperature from the API response
                 setPressure(data.main?.pressure); 
                 setHumidity(data.main?.humidity); 
 
@@ -84,24 +85,24 @@ return (
         
         <div className="weather">
             <div className="weatherIcon">
-                <img src={Sun1}  alt="" height='200px' id='sun1'/>
+                <img src={Sun1}  alt="" height='100px' id='sun1'/>
                 {icon}
             </div>
             {temperature &&
                 (
             <div className="temperature" >
-                Temperaute:{temperature} 
+                Temperaute:{temperature} C
                 </div> )}
             {city && country && 
             (<div className="city"> {city} {country}
             </div>)}
             {pressure && (
             <div className="pressure">
-                Pressure :{pressure}
+                Pressure :{pressure} hPa
             </div>)}
             {humidity && (
             <div className="humidity">
-                Humidity:{humidity}
+                Humidity:{humidity} %
             </div>)}
         
         </div>

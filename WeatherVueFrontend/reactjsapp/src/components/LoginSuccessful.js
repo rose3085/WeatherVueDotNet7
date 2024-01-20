@@ -28,7 +28,7 @@ const LoginSuccessful = () =>
         
         const timeoutId = setTimeout(() => {
          
-          navigate('/CurrentWeather');
+          navigate('/Weather');
         }, 5000);
     
         
