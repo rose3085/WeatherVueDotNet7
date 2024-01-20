@@ -17,8 +17,9 @@ const Weather = () =>
                      <div className="currentWeatherData">
                     <CurrentWeather/></div>
                 </div>
-            <FiveDayForecast/>
-            </div>
+            </div><div className='fiveDayForecast'>
+                    <FiveDayForecast/>
+                </div>
             </div>
         </section>
     );

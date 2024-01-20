@@ -10,13 +10,4 @@ body {
    background:var(--background-color);
 }
 
-.mainPage
-{
-    display: flex;
-    width:40%
-}
-.weatherToday
-{
-    flex:1;
-   
-}
+

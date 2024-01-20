@@ -14,7 +14,7 @@ namespace WeatherVueDotNet7.Services.FiveDayForecast
                     {
                         string idoWeather = Constants.OPEN_WEATHER_APP_ID;
                     //string apiurl = $"https://api.openweathermap.org/data/2.5/forecast?q={city}&appid={idoWeather}";
-                        string apiUrl =$"https://api.openweathermap.org/data/2.5/forecast?q={city}&cnt=5&appid={idoWeather}";
+                        string apiUrl =$"https://api.openweathermap.org/data/2.5/forecast?q={city}&cnt=6&appid={idoWeather}";
                     HttpResponseMessage response = await client.GetAsync(apiUrl);
 
                         if (response.IsSuccessStatusCode)

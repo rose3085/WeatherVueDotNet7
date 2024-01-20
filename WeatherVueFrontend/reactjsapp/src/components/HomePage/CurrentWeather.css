@@ -1,14 +1,93 @@
 
-.weatherIcon
-{
-    width:20px;
-    margin-left:2rem;
-
-}
-
 .weather
 {   display: flex;
-    flex-direction: column;
+    flex-direction: row;
     margin-left:50px;
+     margin-top:1rem;
+}
+.mainWeather
+{
+    display:flex;
+}
+.city
+{
+   font-size: 20px;
+   text-align: centre;
+   margin-left: 2rem;
+   color:aliceblue;
+}
+.dateTime
+{
     color:aliceblue;
+}
+.iconAndCountry
+{
+  
+    color:aliceblue;
+    width:150px;
+}
+.weatherIcon
+{
+    width:30px;
+    margin-left:1rem;
+  
+}
+.temperature
+{
+    width:300px;
+    font-size: 100px;
+    margin-left:2rem;
+    margin-top:3rem;
+    color:aliceblue;
+}
+.otherComponents
+{
+    display:flex;
+    flex-direction: column;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+   height:130px; width:400px;
+    text-align: center;
+    margin-top:1rem;
+    margin-left:2rem;
+}
+.otherFirstRow
+{
+    display:flex;
+    flex-direction:row;
+}
+.otherSecondRow
+{
+    display:flex;
+    flex-direction: row;
+}
+.pressure
+{
+    flex:1;
+    color:aliceblue;
+    
+    
+}
+.humidity
+{
+    flex:1;
+    margin-left:2rem;
+    color:aliceblue;
+    
+    
+}
+
+.sunrise
+{
+    flex:1;
+    color:aliceblue;
+    margin-left:2rem;
+   
+}
+.wind
+{
+    flex:1;
+    color:aliceblue;
+    margin-top:1rem;
 }

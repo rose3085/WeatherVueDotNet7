@@ -15,7 +15,7 @@ body
     display:flex;
     background:var(--background-colour);
     border-radius: 30px;
-    width:100%;
+    width:45%;
 }
 .searchInput
 {

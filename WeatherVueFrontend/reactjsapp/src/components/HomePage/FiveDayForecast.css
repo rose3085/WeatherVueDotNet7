@@ -1,0 +1,67 @@
+.fiveDay
+{
+    display:flex;
+    margin-top:1rem;
+    color:aliceblue;
+}
+.title
+{
+    color:aliceblue; 
+}
+.weatherIcon
+{
+    margin-left:1rem;
+}
+.firstComponent
+{
+    flex:1;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:100px;
+    text-align: center;
+    
+   
+}
+.secondComponent
+{
+    flex:1;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:10px;
+    text-align: center;
+    margin-left:1rem;
+}
+.thirdComponent
+{
+    flex:1;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:100px;
+    text-align: center;
+    
+    margin-left:1rem;  
+}
+.fourthComponent
+{
+    flex:1;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:100px;
+    text-align: center;
+    
+    margin-left:1rem;    
+}
+.fifthComponent
+{
+    flex:1;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:100px;
+    text-align: center;
+    margin-left:1rem; 
+}

@@ -1,5 +1,6 @@
-import React,{useState,useEffect, useLayoutEffect} from 'react';
+import React,{useState,useEffect} from 'react';
 import Sun1 from './Images/Sun1.png';
+import cloud from'./Images/cloud.png';
 import './CurrentWeather.css';
 
 const CurrentWeather = () =>
@@ -10,6 +11,11 @@ const CurrentWeather = () =>
     const[pressure, setPressure] = useState('');
     const[humidity, setHumidity] = useState('');
     const[icon, setIcon] = useState('');
+    const[date, setDate] = useState('');
+    const[sunrise, setSunrise]=useState('');
+    const [wind, setWind] = useState('');
+    const[temperatureMax, setTemperatureMax] = useState('');
+    const[temperatureMin,setTemperatureMin] = useState('');
 
     const storedCityName = localStorage.getItem('cityName');
 
@@ -17,8 +23,9 @@ const CurrentWeather = () =>
     useEffect (()=>
         {
   
-    const fetchWeatherFromBackend = async() =>
+    const fetchWeatherFromBackend = async(e) =>
     {
+       
         const cityName = localStorage.getItem('cityName',city);
         const apiUrl = `https://localhost:7194/api/Forecast/${cityName}`;
           
@@ -39,14 +46,49 @@ const CurrentWeather = () =>
                 const data = await response.json();
             
                 console.log(data);
+                // to change date time to 12 hour format
+                const date = new Date((data.dt) * 1000);
+                const formattedDate = date.toLocaleString('en-US',
+                    {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        day:'numeric',
+                        year:'numeric',
+                        month:'numeric',
+                        hour12:true,
+                    }
+                );
+
                 console.log(data.main?.temp);
-                const temp = Math.floor((data.main?.temp - 273.15) * 100) / 100;
-                setTemperature(temp);  // Set the temperature from the API response
+                const temp =((data.main?.temp - 273.15) );
+                if((temp % 1) >=0.5)
+                {
+                    const temperature = Math.ceil(temp);
+                    setTemperature(temperature);
+                }
+                else{
+                    const temperature = Math.floor(temp);
+                    setTemperature(temperature);
+                }
+
+                const sunrise= new Date((data.sys?.sunrise)* 1000);
+                const formattedSunrise = sunrise.toLocaleString('en-US',
+                    {
+                        hour: 'numeric',
+                        minute: 'numeric',
+                        
+                        hour12:true,
+                    }
+                );
+
+                setSunrise( formattedSunrise);
+                  
                 setPressure(data.main?.pressure); 
                 setHumidity(data.main?.humidity); 
-
+                setDate(formattedDate);
+                console.log(formattedDate);
                 setIcon(data.weather.icon);
-
+                setWind(data.wind?.speed);
                 setCity(data.name);
                 setCountry(data.sys?.country);
                 console.log(data.sys?.country);
@@ -84,27 +126,53 @@ return (
     <section>
         
         <div className="weather">
-            <div className="weatherIcon">
-                <img src={Sun1}  alt="" height='100px' id='sun1'/>
-                {icon}
+            <div className="mainWeather"> 
+            <div className="iconAndCountry">
+                        {city && country && date&&
+                        (<><div className="city"> 
+                    {city}  {country}
+                        </div>
+                        <div className="dateTime">{date}
+                            </div></>)}
+                    
+                            {temperature > 15 ?(
+                        <div className="weatherIcon">
+                            <img src={cloud}  alt="" height='140px' id='cloud'/>
+                           
+                        </div>):
+                        (<div className="weatherIcon">
+                        <img src={Sun1}  alt="" height='140px' id='sun1'/>
+                       
+                    </div>)}</div>
+                        {temperature &&
+                            (
+                        <div className="temperature" > {temperature} °C
+                </div> )}</div>
+            <div className="otherComponents">
+                <div className="otherFirstRow">
+                        {pressure && (
+                    <div className="pressure">
+                        Pressure :<br/>
+                        {pressure} hPa
+                    </div>)}
+                    {humidity && (
+                    <div className="humidity">
+                        Humidity:<br/>
+                        {humidity} %
+                    </div>)}
+                    {sunrise &&
+                    (
+                        <div className="sunrise">Sunrise:<br/>
+                        {sunrise}</div>
+                    )}
+                </div>
+                <div className="otherSecondRow">
+                    {wind&&
+                    (
+                        <div className="wind">Wind:<br/>{wind}</div>
+                    )}
+                </div>
             </div>
-            {temperature &&
-                (
-            <div className="temperature" >
-                Temperaute:{temperature} C
-                </div> )}
-            {city && country && 
-            (<div className="city"> {city} {country}
-            </div>)}
-            {pressure && (
-            <div className="pressure">
-                Pressure :{pressure} hPa
-            </div>)}
-            {humidity && (
-            <div className="humidity">
-                Humidity:{humidity} %
-            </div>)}
-        
         </div>
         </section>
         {/* <div class="details">
