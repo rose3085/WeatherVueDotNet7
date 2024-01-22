@@ -13,7 +13,7 @@
     justify-content: center;
     height: 100vh;
 } */
-.toggleLogin {
+/* .toggleLogin {
     display: flex;
     background-color: #fFF;
     padding: 20px;
@@ -33,27 +33,51 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 300px;
     height: 400px;
+}*/
+.registerComponents
+{
+    font-weight: bold;
+    font-size:25px;
+    color:aliceblue;
 }
 
 .registerform {
-    flex: 1;
-    display: flex;
-    background-color: #fff;
+    
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 30px;
+    height:500px;
     width: 500px;
 }
-.rightPart {
-    flex:1;
-}
-.leftPart {
-    flex: 2;
-}
+
 .userName {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     display: block;
     margin-bottom: 8px;
     font-weight: bold;
+} 
+.inputUserName
+{
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.toggleRegister
+{
+    background-color: transparent;
+    padding: 20px;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:450px; width:380px;
+    text-align: center;
+    margin-left:18rem;
+    margin-top:2rem;
+    color: aliceblue;
+
 }

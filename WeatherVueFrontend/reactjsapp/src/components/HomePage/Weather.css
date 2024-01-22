@@ -9,5 +9,13 @@ body {
     font-family: 'Poppins', sans-serif;
    background:var(--background-color);
 }
-
+.fiveDayForecast
+{
+    margin-top:2rem;
+}
+.loading
+{
+    margin-left:30rem;
+    margin-top:10rem;
+}
 

@@ -32,6 +32,18 @@
     margin-left:1rem;
   
 }
+.pressureIcon
+{
+    width:50px;
+    margin-left:2rem;
+}
+.humidityIcon
+{
+    width:50px;
+    margin-left:2rem;
+}
+
+
 .temperature
 {
     width:300px;
@@ -43,13 +55,14 @@
 .otherComponents
 {
     display:flex;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
     flex-direction: column;
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-   height:130px; width:400px;
+   height:180px; width:470px;
     text-align: center;
-    margin-top:1rem;
+    margin-top:0.2rem;
     margin-left:2rem;
 }
 .otherFirstRow
@@ -66,12 +79,13 @@
 {
     flex:1;
     color:aliceblue;
-    
+    margin-top:0.5rem;
     
 }
 .humidity
 {
     flex:1;
+    margin-top:0.5rem;
     margin-left:2rem;
     color:aliceblue;
     
@@ -81,11 +95,24 @@
 .sunrise
 {
     flex:1;
+    margin-top:0.5rem;
     color:aliceblue;
     margin-left:2rem;
    
 }
 .wind
+{
+    flex:1;
+    color:aliceblue;
+    margin-top:1rem;
+}
+.windDirection
+{
+    flex:1;
+    color:aliceblue;
+    margin-top:1rem;
+}
+.visibility
 {
     flex:1;
     color:aliceblue;

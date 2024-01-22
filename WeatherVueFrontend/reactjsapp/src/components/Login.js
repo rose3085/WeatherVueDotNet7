@@ -2,21 +2,29 @@ import React, { useState,useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 import Cookies from 'js-cookie';
 import "./Login.css";
+import Loader from './HomePage/Loader';
 
 const Login = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
+    const[  validUserName, setValidUserName]= useState('');
+    const[  validPassword, setValidPassword]= useState('');
     const [data, setData] = useState([]);
     const [token, setToken] = useState([]);
     const [isRegistered, setIsRegistered] = useState('');
     const navigate = useNavigate();
+    const [submitClicked, setSubmitClicked] = useState(false);
+
     const handlePageChange = () =>
     {
         navigate("/Register");
     }
+
+
   
     const handleLogin = (event) => {
          event.preventDefault();
+         //setSubmitClicked(true); 
         const apiUrl = `https://localhost:7194/api/Auth/Login`;
         fetch(apiUrl,
             {
@@ -38,6 +46,13 @@ const Login = () => {
                     return response.json();
 
                 }
+                if(response.status === 400)
+                {
+                    setValidUserName(false);
+
+                    setValidPassword(false);
+                
+                }
                
                 throw new Error('Network response was not ok');
             })
@@ -53,10 +68,10 @@ const Login = () => {
                         document.cookie = `token=${data.token}; `;
                     //  return response.json();
                     
-                        navigate("/LoginSuccessful");
+                        navigate("/LoadingSpinner");
                 }
             //   navigate("/Location");
-               
+             setSubmitClicked(true); 
 
             })
             .catch(error => {
@@ -80,33 +95,51 @@ const Login = () => {
             <div className="toggleLogin">
                 <div className="loginComponents">
                 <div className="loginForm">
+                   Login
                     <form onSubmit={handleLogin}>
                         <div className="userName">
                             <label >
-                                Username:
-                                <input type="text" value={userName}
+                                
+                                {/* <input className={`inputUserName ${validUserName === false ? 'invalid' : ''}`} "type="text"  placeholder='Enter your Username'
+                                value={userName}
                                     onChange={(e) =>
-                                        setUserName(e.target.value)} />
-                            </label>
-                        </div>
-                        <br />
+                                        setUserName(e.target.value)} /> */}
+                                        <input
+                                        className={`inputUserName ${validUserName === false ? 'invalid' : ''}`}
+                                        type="text"
+                                        placeholder='Enter your Username'
+                                        value={userName}
+                                        onChange={(e) => setUserName(e.target.value)}
+                                        />
 
+                            <div >
+                            {submitClicked && validUserName === false &&
+                            (<div className="invalidMessage">Enter a valid UserName</div>)}
+                            </div>
+                            </label>
+                        </div> 
+                       
                         <div className="password">
                             <label>
-                                Password:
-                                <input type="password" value={password}
-                                    onChange={(e) =>
-                                        setPassword(e.target.value)} />
+                                <input                                         
+                                className={`inputUserName ${validPassword === false ? 'invalid' : ''}`}
+                                type="password" placeholder='Enter your Password'
+                                value={password}
+                                onChange={(e) =>setPassword(e.target.value)} />
+
+                            {submitClicked && validPassword == false&&
+                            (<div className="invalidMessage">
+                                Enter a valid Username and Password.</div>)}
+                            
                             </label>
                         </div>
 
 
                         <div className="submitButton">
-                            <br />
-                           
-                                <button className="button" type="submit">Login</button>
+                                <button className="button" onClick={handleLogin}>Login</button>
                                 
                        </div>
+
 
                     {/*    </div>    <div className="registerAccount">*/}
                     {/*    <h1>Don't have an account?</h1>*/}
@@ -118,12 +151,13 @@ const Login = () => {
 
                     <div className="registerAccount">
                     <h1 className="registerText">
-                        Don'thave an account?</h1>
-                    <br />
-                    <br />
+                        Don't have an
+                         account?</h1>
+                    
                     <button className="buttonRegister" onClick={handlePageChange}>Register</button>
                     
-                </div>   
+                </div>  
+                   
             </div>
         </section>
     );

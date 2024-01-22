@@ -1,7 +1,8 @@
 :root {
     --background-color: black;
     --text-color: white;
-    --buttonCode-color: #999ede;
+    --buttonCode-color:   lightcyan;
+   
 }
 
 /* body {
@@ -13,16 +14,14 @@
     
     height: 100vh;
 } */
-.toggleLogin {
-    display: flex;
-    background-color: #fFF;
+/* .toggleLogin {
+    background-color: transparent;
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 700px;
-    height: 500px;
-    margin-top: 5rem;
-    margin-left: 10rem;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:100px;
+    text-align: center;
 }
 .loginComponents {
     margin-top: 2rem;
@@ -35,41 +34,16 @@
     height: 400px;
 }
 .registerAccount {
-    flex:2;
+    
     margin-left:5rem;
     margin-top:5rem;
 }
-.loginform {  flex:1;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 30px;
-    width: 500px;
-}
 
-.userName {
-    margin-top:3rem;
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
 
-.password {
-    margin-top: 1rem;
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
 
-input {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 16px;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
+
+
+
 
 .button {
     padding: 10px 20px;
@@ -97,8 +71,76 @@ input {
 .registerText {
     margin-top:3rem;
 
+}*/
+.toggleLogin
+{
+    background-color: transparent;
+    padding: 20px;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:400px; width:380px;
+    text-align: center;
+    margin-left:18rem;
+    margin-top:5rem;
+    color: aliceblue;
 }
-/* Optional: Add some spacing between form elements */
-br {
+.loginComponents
+{
+    margin-top:0.1rem;
+}
+.loginForm
+{
+    font-weight: bold;
+    font-size:25px;
+    color:aliceblue;
+}
+
+.userName {
+    margin-top: 2rem;
     margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.password {
+    margin-top: 1rem;
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+.inputUserName {
+   
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.invalidMessage
+{
+  
+    font-size:0.8rem;
+    font-style:italic;
+    font-weight:lighter;
+    color:#8b0000;
+}
+.inputPassword
+{
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.button
+{
+    padding: 0px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    width:100px;
+    height:30px;
+    outline:none;
+    background-color: lightcyan;
 }

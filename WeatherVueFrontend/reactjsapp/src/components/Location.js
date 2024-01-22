@@ -26,6 +26,8 @@ import React,{useState, useEffect} from 'react';
                 { 
                     const {latitude, longitude} = position.coords;
                     setLocation({latitude, longitude});
+                    localStorage.setItem('lat',latitude);
+                    localStorage.setItem('lon',longitude);
                      const apiKey = 'c7fee8cbe30d48d6be46999f591373c3';
                     //const apiUrl = `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}&api_key=${apiKey}}`;
                     const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;

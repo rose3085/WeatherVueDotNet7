@@ -10,58 +10,64 @@
 }
 .weatherIcon
 {
-    margin-left:1rem;
+    margin-top:0.5rem;
+    margin-left:2.5rem;
 }
 .firstComponent
 {
     flex:1;
     border:1px solid ;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
     border-color: aliceblue;
     border-radius:15px;
     height:100px; width:100px;
     text-align: center;
-    
+    margin-top:1rem;
    
 }
 .secondComponent
 {
     flex:1;
-    border:1px solid ;
+    border:1px solid ; box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
     border-color: aliceblue;
     border-radius:15px;
     height:100px; width:10px;
     text-align: center;
+    margin-top:1rem;
     margin-left:1rem;
 }
 .thirdComponent
 {
     flex:1;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
     height:100px; width:100px;
     text-align: center;
-    
+    margin-top:1rem;
     margin-left:1rem;  
 }
 .fourthComponent
-{
-    flex:1;
-    border:1px solid ;
-    border-color: aliceblue;
-    border-radius:15px;
-    height:100px; width:100px;
-    text-align: center;
-    
-    margin-left:1rem;    
-}
-.fifthComponent
-{
-    flex:1;
+{flex:1;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
     height:100px; width:100px;
     text-align: center;
     margin-left:1rem; 
+    margin-top:1rem; 
+}
+.fifthComponent
+{
+    flex:1;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:100px;
+    text-align: center;
+    margin-left:1rem; 
+    margin-top:1rem;
 }

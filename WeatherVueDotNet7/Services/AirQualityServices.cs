@@ -33,7 +33,6 @@ namespace WeatherVueDotNet7.Services.AirQualityServices
             catch (Exception ex)
             {
 
-
                 // handle exceptions
                 throw new Exception("error while fetching weather data", ex);
             }

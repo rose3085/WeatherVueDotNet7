@@ -1,5 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import Location from './Location';
+import checked from './checked.png';
+import './LoginSucess.css';
+
 import {useNavigate} from 'react-router-dom';
 
 const LoginSuccessful = () =>
@@ -37,8 +40,11 @@ const LoginSuccessful = () =>
  
     return (
         <>
-        <div className="loginSucess">User Login Sucessfull</div>
-        {<Location/>}</>
+         {<Location/>}
+        <div className="loginSucess">
+        <img src={checked}  alt="" height='100px' id='checked'/>
+        </div>
+        </>
     );
 };
 

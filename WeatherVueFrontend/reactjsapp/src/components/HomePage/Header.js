@@ -6,10 +6,12 @@ import SearchBar from './SearchBar';
 const Header = () =>
 {
 
+
     return (
         <>
         <div className={"navigationBar"}>
             <div className={"searchBarSection"}><SearchBar/></div>
+            
            </div>
         </>
     );

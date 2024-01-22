@@ -7,8 +7,9 @@ import WeatherMap from './components/WeatherMap';
 import CurrentWeather from './components/HomePage/CurrentWeather';
 import LoginSuccessful from './components/LoginSuccessful';
 import Weather from './components/HomePage/Weather';
-import FiveDayForecast from './components/HomePage/FiveDayForecast';
-
+import ThreeHourForecast from './components/HomePage/ThreeHourForecast';
+import LoadingSpinner from './components/LoadingSpinner';
+import AirQuality from './components/HomePage/AirQuality';
 
 function App() {
   return (
@@ -22,8 +23,11 @@ function App() {
                   <Route path='/WeatherMap' element={<WeatherMap />}></Route>
                   <Route path='/LoginSuccessful' element={<LoginSuccessful />}></Route>
                   <Route path='/CurrentWeather' element={<CurrentWeather />}></Route>
-                  <Route path='FiveDayForecast' element={<FiveDayForecast/>}></Route>
+                  <Route path='ThreeHourForecast' element={<ThreeHourForecast/>}></Route>
                   <Route path='/Weather' element={<Weather />}></Route>
+                  <Route path='/LoadingSpinner' element={<LoadingSpinner />}></Route>
+                  <Route path='/AirQuality' element={<AirQuality/>}></Route>
+                  
           </Routes>
               </Router>
     </div>
