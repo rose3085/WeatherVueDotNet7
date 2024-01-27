@@ -184,7 +184,7 @@ namespace WeatherVueDotNet7.Services.AuthServices
             };
         }
 
-        public async Task<AuthServiceResponseDto> DeleteUser(LoginDto loginDto)
+        public async Task<AuthServiceResponseDto> DeleteUser(DeleteUserDto model)
         {
             ////var hero = await _context.SuperHeroes.FindAsync(id);
             //var isExistsUser = await _userManager.FindByNameAsync(loginDto.UserName);
@@ -198,7 +198,7 @@ namespace WeatherVueDotNet7.Services.AuthServices
             //    IsSucceed = true,
             //    Message = "User deleted sucessfully"
             //};
-            var isExistsUser = await _userManager.FindByNameAsync(loginDto.UserName);
+            var isExistsUser = await _userManager.FindByNameAsync(model.UserName);
 
             if (isExistsUser is null)
             {
@@ -208,8 +208,17 @@ namespace WeatherVueDotNet7.Services.AuthServices
                     Message = "User not found"
                 };
             }
+            var isCorrrectEmail = await _userManager.FindByEmailAsync(model.Email);
+            if (isCorrrectEmail is null)
+            {
+                return new AuthServiceResponseDto()
+                {
+                    IsSucceed = false,
+                    Message = "User not found"
+                };
+            }
 
-            var isPasswordCorrect = await _userManager.CheckPasswordAsync(isExistsUser, loginDto.Password);
+            var isPasswordCorrect = await _userManager.CheckPasswordAsync(isExistsUser, model.Password);
 
             if (!isPasswordCorrect)
                 return new AuthServiceResponseDto()

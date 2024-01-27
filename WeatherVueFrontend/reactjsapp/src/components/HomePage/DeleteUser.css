@@ -1,0 +1,78 @@
+.deleteWrap
+{
+    background-color: transparent;
+    padding: 20px;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:300px; width:380px;
+    text-align: center;
+    margin-left:23rem;
+    margin-top:8rem;
+    color: aliceblue;
+}
+
+.deleteUser
+{
+    margin-top:1rem;
+    font-weight: bold;
+    font-size:20px;
+
+}
+.userNameInputDelete
+{
+    margin-top:0.5rem;
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left:-1rem;
+}
+
+.emailInputDelete
+{margin-left:-1rem;
+    margin-top:0.5rem;
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.passwordInputDelete
+{margin-top:0.5rem;
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left:-1rem;
+}
+
+.deleteButton
+{
+    
+    padding: 0px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    width:100px;
+    height:32.5px;
+    outline:none;
+    background-color: lightcyan;
+    transition: background-color 0.3s ease;
+}
+
+.deleteButton:hover
+{
+    background-color:#b0e0e6;
+}
+
+.cancelButton
+{
+    margin-top:1rem;
+    margin-left:2rem;
+}

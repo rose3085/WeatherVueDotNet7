@@ -15,6 +15,11 @@ const SideDashBoard = () =>
         navigate('/LogOut');
     };
 
+    const handleDeleteClicked = () =>
+    {
+        navigate('/DeleteUser');
+    }
+
     return (
         <div className="sideNavigation">
         <div className={"navigationBar"}>
@@ -24,7 +29,7 @@ const SideDashBoard = () =>
                 </button>
              </div> */}
              <div className="logOutNav" onClick={handleLogOutClicked}>LogOut</div>
-             <div className="deleteUser">Delete</div>
+             <div className="deleteUser" onClick={handleDeleteClicked}>Delete</div>
             
            </div>
         </div>

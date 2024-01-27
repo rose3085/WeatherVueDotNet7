@@ -8,7 +8,7 @@ namespace WeatherVueDotNet7.Services.AuthServices
         Task<AuthServiceResponseDto> LoginAsync(LoginDto loginDto);
         Task<AuthServiceResponseDto> MakeAdminAsync(UpdatePremissionDto model);
         Task<AuthServiceResponseDto> SeedRolesAsync();
-        Task<AuthServiceResponseDto> DeleteUser(LoginDto loginDto);
+        Task<AuthServiceResponseDto> DeleteUser(DeleteUserDto loginDto);
         //Task<ResponseManager> MakeAdmin(UpdatePremissionDto model);
     }
 }

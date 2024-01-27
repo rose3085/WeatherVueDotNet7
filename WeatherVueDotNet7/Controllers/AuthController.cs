@@ -55,7 +55,7 @@ namespace WeatherVueDotNet7.Controllers
         }
 
         [HttpPost("Delete")]
-        public async Task<IActionResult> DeleteUser(LoginDto model)
+        public async Task<IActionResult> DeleteUser(DeleteUserDto model)
         {
             if (ModelState.IsValid)
             {

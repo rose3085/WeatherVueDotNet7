@@ -11,7 +11,7 @@ import ThreeHourForecast from './components/HomePage/ThreeHourForecast';
 import LoadingSpinner from './components/LoadingSpinner';
 import AirQuality from './components/HomePage/AirQuality';
 import LogOut from './components/HomePage/LogOut';
-import SideDashBoard from './components/HomePage/SideDashBoard';
+import DeleteUser from './components/HomePage/DeleteUser';
 import LogOutLoader from './components/HomePage/LogOutLoader';
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
           <Routes>
                   <Route path='/' element={<Login />}></Route>
                   <Route path='/Register' element={<Register />}></Route>
-                  <Route path='/SideDashBoard' element={<SideDashBoard/>}></Route>
+                  <Route path='/DeleteUser' element={<DeleteUser/>}></Route>
                   <Route path='/WeatherMap' element={<WeatherMap />}></Route>
                   <Route path='/LoginSuccessful' element={<LoginSuccessful />}></Route>
                   <Route path='/CurrentWeather' element={<CurrentWeather />}></Route>
