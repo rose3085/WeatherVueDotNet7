@@ -58,10 +58,21 @@ const CurrentWeather = () =>
                 const data = await response.json();
             
                 console.log(data);
+                const timeZone =(data.timezone) - 20700;
+                const adjustedTimeZone = new Date(timeZone * 1000);
+
+                console.log( adjustedTimeZone );
                 // to change date time to 12 hour format
-                const date = new Date((data.dt) * 1000);
-                const formattedDate = date.toLocaleString('en-US',
+                // const timestamp = data.dt * 1000;
+                // const date = new Date(timestamp);
+                //const timeZone = data.sys?.country;
+                const date = new Date(((data.dt) * 1000));
+                const adjustedDate = new Date(date.getTime() + timeZone);
+               // const finalDate = new Date(adjustedTimeZone + adjustedDate);
+               // console.log(finalDate);
+                const formattedDate = adjustedDate.toLocaleDateString('en-US',
                     {
+                       
                         hour: 'numeric',
                         minute: 'numeric',
                         day:'numeric',
@@ -82,6 +93,7 @@ const CurrentWeather = () =>
                     const temperature = Math.floor(temp);
                     setTemperature(temperature);
                 }
+               
 
                 const sunrise= new Date((data.sys?.sunrise)* 1000);
                 const formattedSunrise = sunrise.toLocaleString('en-US',

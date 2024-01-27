@@ -1,14 +1,27 @@
 import React,{useState, useEffect} from 'react';
 import {IconContext} from "react-icons";
-import Header from './Header';
+import Header from './SideDashBoard';
 import CurrentWeather from './CurrentWeather';
 import ThreeHourForecast from './ThreeHourForecast';
+import SideDashBoard from './SideDashBoard';
+import iconW from './Images/letterWW.png';
 import "./Weather.css";
 import Loader from './Loader';
+import SearchBar from './SearchBar';
+import AirQuality from './AirQuality';
 
 const Weather = () =>
 {
     const[loader, setLoader]= useState(true);
+    
+    // const [isSidebarOpen, setSidebarOpen] = useState(false);
+
+
+    // const userName = localStorage.getItem('userName');
+    // const handleUserNameClick = () =>
+    //     {
+    //         setSidebarOpen(true);
+    //      }
 
     useEffect(()=>
     {
@@ -38,8 +51,21 @@ const Weather = () =>
           
             <div className={"pageWrap"}>
             <div className="mainPage">
-              
-                 <Header/> 
+                
+<div className="upperNavigation">
+        {/* <div className={`userIcon ${isSidebarOpen ? 'open' : ''}`} onClick={handleUserNameClick}>
+        <img src={iconW}  alt="" height='30px' id='iconW'/>
+        {isSidebarOpen &&
+       (<SideDashBoard isOpen={isSidebarOpen}/>) }
+        </div>
+        <div className={`userNameLocal `} >
+        { userName} 
+      
+        
+        </div> */}
+            <div><SearchBar/></div>
+            
+        </div>
                  {loader ?
                  
             (<div className="loading"><Loader/></div>):(
@@ -50,7 +76,11 @@ const Weather = () =>
                 </div>
             <div className='fiveDayForecast'>
                     <ThreeHourForecast/>
-                </div></div>
+                </div>
+                <div className="airPollutionIndex">
+                    <AirQuality/>
+                </div>
+                </div>
                
             )}
              </div>

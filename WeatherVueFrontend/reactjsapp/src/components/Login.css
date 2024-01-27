@@ -79,7 +79,7 @@
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-    height:400px; width:380px;
+    height:350px; width:380px;
     text-align: center;
     margin-left:18rem;
     margin-top:5rem;
@@ -137,10 +137,40 @@
 .button
 {
     padding: 0px 10px;
-    border-radius: 5px;
+    border-radius: 9px;
     cursor: pointer;
     width:100px;
-    height:30px;
+    height:32.5px;
+    outline:none;
+    background-color: lightcyan;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover
+{
+    background-color:#b0e0e6;
+}
+.buttonRegister:hover
+{
+    background-color:#b0e0e6;
+}
+
+.loginLoader
+{
+   margin-top:1rem;
+}
+/* .buttonText
+{
+    font-size:1px;
+} */
+.buttonRegister
+{
+    padding: 0px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    width:100px;
+    height:32.5px;
     outline:none;
     background-color: lightcyan;
 }
+

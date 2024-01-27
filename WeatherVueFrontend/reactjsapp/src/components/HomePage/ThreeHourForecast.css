@@ -1,6 +1,6 @@
 .fiveDay
 {
-    display:flex;
+   margin-left:1.5rem;
     margin-top:1rem;
     color:aliceblue;
 }
@@ -8,66 +8,129 @@
 {
     color:aliceblue; 
 }
+.threeHourTitle
+{
+    margin-top:1rem;
+    color:lightcyan;
+    font-size:20px; 
+    margin-left:3rem;  
+}
 .weatherIcon
 {
     margin-top:0.5rem;
-    margin-left:2.5rem;
+    margin-left:4.1rem;
+   
+}
+
+.firstLineComponent
+{
+    flex-wrap: wrap;
+    display:flex;
+}
+.secondLineComponent
+{
+    flex-wrap: wrap;
+    margin-top:2rem;
+    display:flex;
 }
 .firstComponent
 {
-    flex:1;
-    border:1px solid ;
+    
+    /* border:1px solid ;
     box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
     border-color: aliceblue;
     border-radius:15px;
-    height:100px; width:100px;
     text-align: center;
+    margin-top:1rem; */
+    box-shadow:  7px 7px 15px rgba(0, 0, 0, 1);
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:180px;
+    text-align: center;
+    margin-left:2.5rem; 
     margin-top:1rem;
-   
+    transition: width 0.3s ease, height 0.3 ease;
 }
 .secondComponent
 {
-    flex:1;
-    border:1px solid ; box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 1);
+    border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-    height:100px; width:10px;
+    height:100px; width:180px;
     text-align: center;
+    margin-left:2.5rem; 
     margin-top:1rem;
-    margin-left:1rem;
+    transition: width 0.3s ease, height 0.3 ease;
 }
 .thirdComponent
 {
-    flex:1;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    box-shadow:  7px 7px 15px rgba(0, 0, 0, 1);
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-    height:100px; width:100px;
+    height:100px; width:180px;
     text-align: center;
-    margin-top:1rem;
-    margin-left:1rem;  
+    margin-left:2.5rem; 
+    margin-top:1rem;  
+    transition: width 0.3s ease, height 0.3 ease;
 }
 .fourthComponent
-{flex:1;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+{
+    box-shadow:  7px 7px 15px rgba(0, 0, 0, 1);
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-    height:100px; width:100px;
+    height:100px; width:180px;
     text-align: center;
-    margin-left:1rem; 
+    margin-left:2.5rem; 
     margin-top:1rem; 
+    transition: width 0.3s ease, height 0.3 ease;
+
 }
 .fifthComponent
 {
-    flex:1;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    
+    box-shadow:  7px 7px 15px rgba(0, 0, 0, 1);
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-    height:100px; width:100px;
+    height:100px; width:180px;
     text-align: center;
-    margin-left:1rem; 
+    margin-left:2.5rem; 
     margin-top:1rem;
+    transition: width 0.3s ease, height 0.3 ease;
+}
+
+.fifthComponent:hover
+{
+    width:182px;
+    height:105px;
+
+}
+.firstComponent:hover
+{
+    width:182px;
+    height:105px;
+
+}
+
+.thirdComponent:hover
+{
+    width:182px;
+    height:105px;
+
+}
+
+.fourthComponent.hover{
+    width:182px;
+    height:105px;
+
+}
+.secondComponent:hover
+{
+    width:182px;
+    height:105px;
+
 }

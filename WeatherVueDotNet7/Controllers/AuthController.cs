@@ -54,9 +54,20 @@ namespace WeatherVueDotNet7.Controllers
             //    return Unauthorized(loginResult);
         }
 
+        [HttpPost("Delete")]
+        public async Task<IActionResult> DeleteUser(LoginDto model)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _authServices.DeleteUser(model);
+                return Ok(result);
+            }
+            return BadRequest();
+        }
+        
 
 
-        [HttpPost]
+            [HttpPost]
         [Route("make-admin")]
         public async Task<ActionResult<AuthServiceResponseDto>> MakeAdmin([FromBody] UpdatePremissionDto model)
         {

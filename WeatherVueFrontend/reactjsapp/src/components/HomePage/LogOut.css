@@ -1,0 +1,71 @@
+.logOutPageWrap
+{
+    background-color: transparent;
+    padding: 20px;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:200px; width:300px;
+    text-align: center;
+    margin-left:23rem;
+    margin-top:8rem;
+    color: aliceblue;
+}
+
+.confirmButton
+{
+    display:flex;
+}
+.logOutText
+{
+    font-weight: bold;
+    font-size:25px;
+}
+.confirmText
+{
+    margin-top:2rem;
+}
+.logOutYes 
+{
+   margin-top:3rem;
+   width:170px;
+  
+}
+.yesButton
+{
+    padding: 0px 10px;
+    border-radius: 9px;
+    cursor: pointer;
+    width:100px;
+    height:35px;
+    outline:none;
+    background-color: lightcyan;
+    transition: background-color 0.3s ease;
+}
+.yesButton:hover
+{
+    background-color :#b0e0e6;
+}
+.noButton:hover
+{
+    background-color:#b0e0e6;
+}
+.logOutNo
+{
+    margin-top:3rem;
+
+}
+.buttonText
+{
+    font-size:20px;
+}
+.noButton{
+    padding: 0px 10px;
+    border-radius: 7px;
+    cursor: pointer;
+    width:100px;
+    height:35px;
+    outline:none;
+    background-color: lightcyan;
+    transition: background-color 0.3s ease;
+}

@@ -10,6 +10,9 @@ import Weather from './components/HomePage/Weather';
 import ThreeHourForecast from './components/HomePage/ThreeHourForecast';
 import LoadingSpinner from './components/LoadingSpinner';
 import AirQuality from './components/HomePage/AirQuality';
+import LogOut from './components/HomePage/LogOut';
+import SideDashBoard from './components/HomePage/SideDashBoard';
+import LogOutLoader from './components/HomePage/LogOutLoader';
 
 function App() {
   return (
@@ -19,14 +22,15 @@ function App() {
           <Routes>
                   <Route path='/' element={<Login />}></Route>
                   <Route path='/Register' element={<Register />}></Route>
-                  <Route path='/Location' element={<Location/>}></Route>
+                  <Route path='/SideDashBoard' element={<SideDashBoard/>}></Route>
                   <Route path='/WeatherMap' element={<WeatherMap />}></Route>
                   <Route path='/LoginSuccessful' element={<LoginSuccessful />}></Route>
                   <Route path='/CurrentWeather' element={<CurrentWeather />}></Route>
                   <Route path='ThreeHourForecast' element={<ThreeHourForecast/>}></Route>
                   <Route path='/Weather' element={<Weather />}></Route>
                   <Route path='/LoadingSpinner' element={<LoadingSpinner />}></Route>
-                  <Route path='/AirQuality' element={<AirQuality/>}></Route>
+                  <Route path='/LogOutLoader' element={<LogOutLoader/>}></Route>
+                  <Route path='/LogOut' element={<LogOut/>}></Route>
                   
           </Routes>
               </Router>

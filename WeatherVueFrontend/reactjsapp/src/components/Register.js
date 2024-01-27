@@ -6,6 +6,7 @@ const Register = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
     const[  validUserName, setValidUserName]= useState('');
+    const[succeed, setSucceed] = useState('');
     const[  validPassword, setValidPassword]= useState('');
     const[  validEmailError, setValidEmailError]= useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
@@ -15,10 +16,15 @@ const Register = () => {
     const navigate = useNavigate();
     const [submitClicked, setSubmitClicked] = useState(false);
 
+    const handleNavigation = () =>
+    {
+        navigate('/');
+    }
 
 
 
     const handleRegister = async (event) => {
+        
         event.preventDefault();
         const apiUrl = `https://localhost:7194/api/Auth/Register`;
         fetch(apiUrl,
@@ -42,20 +48,25 @@ const Register = () => {
 
 
                 }
-                if (response.status === 400)
-                {
-                    setValidEmailError(false);
-                }
-                if(response.status === 200 && response.isSucceed == false)
-                {
-                    setValidUserName(false);
-                }
+                // if (response.status === 400)
+                // {   setSucceed(false);
+                //     setValidEmailError(false);
+                // }
+                // if(response.status === 200 && response.isSucceed == false)
+                // {
+                //     setValidUserName(false);
+                // }
+               
                 throw new Error('Network response was not ok');
             })
             .then(data => {
                 console.log(data);
                 setData(data);
-              
+                console.log(data.isSucceed);
+                if(data.isSucceed === `false`)
+                {
+                    setSucceed(false);
+                }
                 if(data.userName !=null)
                 {
                 const name = data.userName;
@@ -74,7 +85,7 @@ const Register = () => {
         
             <div className="toggleRegister">
                 <div className="registerComponents">
-                   Register
+                  <div className="registerText"> Register</div>
                     <form className="registerForm" onSubmit={handleRegister}>
            
                 <label className="userName">
@@ -82,26 +93,10 @@ const Register = () => {
                     <input className={`inputUserName ${validUserName === false ? 'invalid' : ''}`}
                      type="text" value={userName} placeholder='Enter your Username' onChange={(e) =>
                         setUserName(e.target.value)} />
-                         {submitClicked && validUserName  &&
-                            (<div className="invalidMessage">Enter a valid username</div>)}
-                           
+                         
                 </label>
-               
-                        <label className="userName">
-                   
-                    <input className="inputUserName" type="text" value={firstName} placeholder='Enter your First Name' onChange={(e) =>
-                        setFirstName(e.target.value)} />
-                </label>
-                
-                        <label className="userName">
-                   
-                    <input  className="inputUserName" type="text" value={lastName}
-                        placeholder='Enter your Last Name' onChange={(e) =>
-                        setLastName(e.target.value)} />
-                </label>
-                       
-                        
-                        <label className="userName">
+            
+                  <label className="userName">
                    
                     <input   className={`inputUserName ${validEmailError === false ? 'invalid' : ''}`}
                             type="email" value={email} 
@@ -122,16 +117,25 @@ const Register = () => {
                     <input className="inputUserName" type="password" 
                         placeholder='Confirm Password' value={confirmPassword} onChange={(e) =>
                         setConfirmPassword(e.target.value)} />
+                        
                         </label>
-                
-                <br />
-
+                        
+                           
+                        {submitClicked && !succeed&&
+                            <div className="invalidMessage">Enter valid credentials.</div>}
                 <div className="submitButton">
                     
-                    <button type="submit">Register</button>
-                    <Link to="/">Login</Link>
+                    <button className="registerSubmitButton" type="submit">Register</button>
+
+                    
                     </div>
                         </form>
+                    </div>
+                    <div className="loginLink">
+                    {/* <Link to="/">Login</Link> */}
+                    <div className="loginText">
+                    Already have an account ? </div>
+                    <button className="navigationButton" onClick={handleNavigation}> Login</button>
                     </div>
                 </div>
                          

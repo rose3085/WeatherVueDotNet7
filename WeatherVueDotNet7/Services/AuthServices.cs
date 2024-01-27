@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -51,8 +52,8 @@ namespace WeatherVueDotNet7.Services.AuthServices
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim("JWTID", Guid.NewGuid().ToString()),
-                 new Claim("FirstName", (string)user.FirstName),
-                new Claim("LastName", (string)user.LastName),
+                // new Claim("FirstName", (string)user.FirstName),
+                //new Claim("LastName", (string)user.LastName),
             };
 
             foreach (var userRole in userRoles)
@@ -125,8 +126,8 @@ namespace WeatherVueDotNet7.Services.AuthServices
 
             ApplicationUser newUser = new ApplicationUser()
             {
-                FirstName = registerDto.FirstName,
-                LastName = registerDto.LastName,
+                //FirstName = registerDto.FirstName,
+                //LastName = registerDto.LastName,
                 Email = registerDto.Email,
                 UserName = registerDto.UserName,
                 SecurityStamp = Guid.NewGuid().ToString(),
@@ -183,6 +184,61 @@ namespace WeatherVueDotNet7.Services.AuthServices
             };
         }
 
+        public async Task<AuthServiceResponseDto> DeleteUser(LoginDto loginDto)
+        {
+            ////var hero = await _context.SuperHeroes.FindAsync(id);
+            //var isExistsUser = await _userManager.FindByNameAsync(loginDto.UserName);
+            //if (isExistsUser is null)
+            //{
+            //    return null;
+            //}
+            //_userManager.Remove(isExistsUser);
+            //return new AuthServiceResponseDto()
+            //{
+            //    IsSucceed = true,
+            //    Message = "User deleted sucessfully"
+            //};
+            var isExistsUser = await _userManager.FindByNameAsync(loginDto.UserName);
+
+            if (isExistsUser is null)
+            {
+                return new AuthServiceResponseDto()
+                {
+                    IsSucceed = false,
+                    Message = "User not found"
+                };
+            }
+
+            var isPasswordCorrect = await _userManager.CheckPasswordAsync(isExistsUser, loginDto.Password);
+
+            if (!isPasswordCorrect)
+                return new AuthServiceResponseDto()
+                {
+                    IsSucceed = false,
+                    Message = "Invalid Credentials"
+                };
+
+            var result = await _userManager.DeleteAsync(isExistsUser);
+
+            if (result.Succeeded)
+            {
+                return new AuthServiceResponseDto()
+                {
+                    IsSucceed = true,
+                    Message = "User deleted successfully"
+                };
+            }
+            else
+            {
+                return new AuthServiceResponseDto()
+                {
+                    IsSucceed = false,
+                    Message = "Error deleting user: " + string.Join(", ", result.Errors.Select(e => e.Description))
+                };
+            }
+        }
+
+
         private string GenerateNewJsonWebToken(List<Claim> claims)
         {
             var authSecret = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
@@ -190,7 +246,7 @@ namespace WeatherVueDotNet7.Services.AuthServices
             var tokenObject = new JwtSecurityToken(
                     issuer: _configuration["JWT:ValidIssuer"],
                     audience: _configuration["JWT:ValidAudience"],
-                    expires: DateTime.Now.AddHours(1),
+                    expires: DateTime.Now.AddDays(1),
                     claims: claims,
                     signingCredentials: new SigningCredentials(authSecret, SecurityAlgorithms.HmacSha256)
                 );

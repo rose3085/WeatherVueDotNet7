@@ -33,8 +33,9 @@ const WeatherMap = () =>
             document.body.appendChild(containerDiv);
 
         const imageBounds = [[-90,-180],[90,180]];
-
-        const apiUrl = `https://localhost:7194/api/Forecast/weatherMap?layer=${layer}&x=${x}&y=${y}&z=${z}`;
+        const idoWeather = "b81254f0e327b2707342b7d4fc3e7837";
+        // const apiUrl = `https://localhost:7194/api/Forecast/weatherMap?layer=${layer}&x=${x}&y=${y}&z=${z}`;
+        const apiUrl = `https://tile.openweathermap.org/map/${layer}/${z}/${x}/${y}.png?appid=${idoWeather}`;
       const map = L.map('mapContainer').setView([x,y], 2);
 
 
@@ -92,6 +93,7 @@ const WeatherMap = () =>
                     }
                 })
                 .then(data => {
+                    debugger;
                     console.log(data);
                     <MapContainer
                     center={[data.coord?.lat || 0, data.coord?.lon || 0]}

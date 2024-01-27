@@ -1,18 +1,20 @@
+
 import React, { useState,useEffect } from 'react';
 import {useNavigate} from 'react-router-dom';
 import Cookies from 'js-cookie';
 import "./Login.css";
-import Loader from './HomePage/Loader';
+
 
 const Login = () => {
     const [userName, setUserName] = useState('');
     const [password, setPassword] = useState('');
-    const[  validUserName, setValidUserName]= useState('');
-    const[  validPassword, setValidPassword]= useState('');
+    const[  validUserName, setValidUserName]= useState(true);
+    const[  validPassword, setValidPassword]= useState(true);
     const [data, setData] = useState([]);
-    const [token, setToken] = useState([]);
+    const [token, setToken] = useState(false);
     const [isRegistered, setIsRegistered] = useState('');
     const navigate = useNavigate();
+    const[loader, setLoader] = useState(false);
     const [submitClicked, setSubmitClicked] = useState(false);
 
     const handlePageChange = () =>
@@ -23,8 +25,10 @@ const Login = () => {
 
   
     const handleLogin = (event) => {
+        
          event.preventDefault();
          //setSubmitClicked(true); 
+         
         const apiUrl = `https://localhost:7194/api/Auth/Login`;
         fetch(apiUrl,
             {
@@ -37,19 +41,19 @@ const Login = () => {
             })
             .then(response => {
                 if (response.ok) {
-
                     // const name = data.userName;
                     // localStorage.setItem('userName', name);
 
                     // //const jwtToken = data.token;
                     // document.cookie = `token=${data.token}; `;
+                    setValidUserName(true);
+                    setValidPassword(true);
                     return response.json();
 
                 }
                 if(response.status === 400)
                 {
                     setValidUserName(false);
-
                     setValidPassword(false);
                 
                 }
@@ -67,8 +71,19 @@ const Login = () => {
                         //const jwtToken = data.token;
                         document.cookie = `token=${data.token}; `;
                     //  return response.json();
-                    
+                        setToken(true);
+                        setLoader(true);
                         navigate("/LoadingSpinner");
+                        // setTimeout(() => {
+
+                        //     navigate('/LoadingSpinner');
+                        //   }, 1000);
+                }
+                else
+                {
+                    setValidUserName(false);
+                    setValidPassword(false);
+                    setLoader(false);
                 }
             //   navigate("/Location");
              setSubmitClicked(true); 
@@ -88,6 +103,13 @@ const Login = () => {
                 navigate('/Weather');
             }
     },[]);
+    // useEffect(()=>
+    // {
+    //     {token && 
+    //     (<>
+    //         navigate("/LoadingSpinner");
+    //     </>)}
+    // },[3000]);
 
 
     return (
@@ -129,7 +151,7 @@ const Login = () => {
 
                             {submitClicked && validPassword == false&&
                             (<div className="invalidMessage">
-                                Enter a valid Username and Password.</div>)}
+                                Enter a valid Password.</div>)}
                             
                             </label>
                         </div>
@@ -154,9 +176,12 @@ const Login = () => {
                         Don't have an
                          account?</h1>
                     
-                    <button className="buttonRegister" onClick={handlePageChange}>Register</button>
+                    <button className="buttonRegister" onClick={handlePageChange}>
+                        Register</button>
                     
                 </div>  
+                {/* {loader &&
+                    (<div className="loginLoader"><LoaderLogin/></div>)} */}
                    
             </div>
         </section>

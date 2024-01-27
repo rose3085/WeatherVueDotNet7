@@ -1,0 +1,155 @@
+/* .airPageWrap
+{
+    display: flex;
+    
+}
+.airQuality
+{box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:100px; width:500px;
+    text-align: center;
+    margin-left:1rem; 
+    margin-top:1rem;
+    color:aliceblue;
+    display: flex;
+
+}
+.airQualityAqi
+{
+    display: flex;
+    flex-direction: column;
+}
+.airQualityIndex
+{
+    margin-left:1rem;
+    margin-top:1rem;
+
+}
+.carbonMonoOxide
+{
+    margin-left:1rem;
+    margin-top:1rem;
+}
+.nitricOxide
+{
+    margin-left:1rem;
+    margin-top:1rem;
+}
+
+.nitrogenDiOxide
+{
+    margin-left:1rem;
+    margin-top:1rem;
+}
+
+.ozone
+{
+margin-left:1rem;
+    margin-top:1rem;
+}
+.sulphurDiOxide{
+    margin-left:1rem;
+    margin-top:1rem;
+} */
+
+.airComponents
+{
+    margin-left:7rem;
+}
+
+.airPollutionConc
+{
+    margin-top:2rem;
+
+}
+.airQuality
+{
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 1);
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:15px;
+    height:300px; width:830px;
+    text-align: center;
+    margin-left:4.5rem; 
+    margin-top:1rem;
+    color:aliceblue;
+    font-size:20px;
+    margin-top:3rem;
+    
+}
+.airQualityIndex
+{
+    display:flex;
+    margin-top:1rem;
+}
+.airQualityHeader
+{
+    display: flex;
+}
+.pollutionIcon
+{
+    width:30px;
+    margin-left:4rem;
+    margin-top:0.5rem;
+}
+.firstPart
+{
+    display:flex;
+    margin-left:3rem;
+}
+.secondPart
+{display: flex;
+    margin-left:3rem;
+}
+.carbonMonoOxide
+{
+    
+    margin-top:1rem;
+    display:flex;
+    width:200px;
+}
+.nitricOxide
+{
+    
+    margin-top:1rem;
+    display:flex;
+    width:200px;
+}
+
+.nitrogenDiOxide
+{
+   
+    margin-top:1rem;
+    display:flex;
+    width:200px;
+}
+
+.ozone
+{
+    width:200px;
+    margin-top:1rem;
+    display:flex;
+}
+.sulphurDiOxide{
+    width:200px;
+    margin-top:1rem;
+    display:flex;
+}
+.ammonia
+{   width:200px;
+    margin-top:1rem;
+    display:flex;
+}
+
+.pollutionText
+{
+    color:lightcyan;
+    font-size:20px;
+}
+.airQualityMessage
+{
+    display:flex;
+    margin-top:2rem;
+}

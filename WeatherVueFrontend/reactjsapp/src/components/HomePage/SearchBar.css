@@ -1,4 +1,4 @@
-#root
+/* #root
 {
     --button-colour :  #555;
     --background-colour:  lightcyan;
@@ -10,12 +10,13 @@ body
     margin-right:50px;
 }
 
+
 .searchBar
-{ margin-top:1rem;
+{   margin-top:1rem;
     display:flex;
     background:var(--background-colour);
     border-radius: 30px;
-    width:45%;
+    width:550px;
 }
 .searchInput
 {
@@ -39,6 +40,127 @@ body
     margin-right:0.5rem;
     cursor: pointer;
 } 
+
+
+/* .userIcon
+{
+    margin-top:2rem;
+    margin-left:1rem;
+    width:50px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-in;
+   
+}
+.userNameLocal
+{
+    margin-top:2rem;
+    margin-left: 5rem;
+    color:aliceblue;
+    
+
+}
+
+.userIcon.open
+{
+    transform: translateX(0);
+    margin-left: 0.1rem;
+}
+
+.userIcon:not(.open)
+{
+    transform: translateX(40%);
+    margin-left: -1rem;
+} */ */
+#root
+{
+    --button-colour :  #555;
+    --background-colour:  lightcyan;
+    --button-background: #ebfffc;
+}
+body
+{
+    margin-left:50px;
+    margin-right:50px;
+}
+
+.searchBar
+{ margin-top:1rem;
+    display:flex;
+    background:var(--background-colour);
+    border-radius: 30px;
+    width:550px;
+}
+.searchInput
+{
+    border-color:transparent;
+    margin-top:1rem;
+    margin-left:1rem;
+    background:var(--background-colour);
+    width:100%;
+    height:18px;
+    outline: none;
+}
+/* .appLogo
+{
+    width:150px;
+    margin-top:2rem;
+
+} */
+.searchButton
+{
+   border-color:transparent;
+   background:var(--background-colour);
+    border-radius: 50%;
+    margin-top:0.5rem;
+    height:50px;
+    padding: 1px 2px;
+    margin-left:3rem;
+    margin-right:0.5rem;
+    cursor: pointer;
+} 
+.user
+{
+    color:lightcyan;
+    cursor: pointer;
+   
+}
+
+.userIcon
+{
+    margin-top:2rem;
+    width:50px;
+    cursor: pointer;
+   
+   
+}
+.iconLogo
+{
+    margin-left:2rem;
+}
+.userNameLocal
+{
+    margin-top:2rem;
+    margin-left: 18rem;
+    color:aliceblue;
+    font-size:20px;   
+    transition: transform 0.3s ease-in-in;
+}
+
+/* .userNameLocal.open
+{
+    transform: translateX(10%);
+    margin-left: 22rem;
+   
+}
+
+.userNameLocal:not(.open)
+{
+    transform: translateX(-10%);
+    margin-left: 1rem;
+} */
+.search{
+    display: flex;
+}
 /* 
 .search
 {

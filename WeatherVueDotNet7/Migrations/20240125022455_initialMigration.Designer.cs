@@ -12,8 +12,8 @@ using WeatherVueDotNet7.Data;
 namespace WeatherVueDotNet7.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240111171703_secondMigration")]
-    partial class secondMigration
+    [Migration("20240125022455_initialMigration")]
+    partial class initialMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -239,16 +239,11 @@ namespace WeatherVueDotNet7.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("ApplicationUserId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<string>("UserLocation")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("ApplicationUserId");
 
                     b.ToTable("Locations");
                 });
@@ -302,15 +297,6 @@ namespace WeatherVueDotNet7.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("WeatherVueDotNet7.Model.Location", b =>
-                {
-                    b.HasOne("WeatherVueDotNet7.Model.ApplicationUser", "ApplicationUser")
-                        .WithMany()
-                        .HasForeignKey("ApplicationUserId");
-
-                    b.Navigation("ApplicationUser");
                 });
 #pragma warning restore 612, 618
         }

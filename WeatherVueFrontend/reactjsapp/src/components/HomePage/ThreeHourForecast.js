@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react';
 import contrast from './Images/contrast.png';
 import cloud from'./Images/cloud.png';
+import {Line} from "react-chartjs-2";
 import Sun1 from './Images/Sun1.png';
 import "./ThreeHourForecast.css";
 
@@ -24,18 +25,26 @@ const ThreeHourForecast = () =>
     const[temperatureSix, setTemperatureSix] = useState('');
     const[dateSeven, setDateSeven] = useState('');
     const[temperatureSeven, setTemperatureSeven] = useState('');
-    const[lat,setLat] = useState('');
-    const[lon, setLon] = useState('');
+
+    // const [chart, setChart] = useState(
+    //     {labels: [],
+    //     datasets: [
+    //       {
+    //         label: 'Temperature (°C)',
+    //         data: [],
+    //         backgroundColor: 'rgba(75,192,192,0.4)',
+    //         borderColor: 'rgba(75,192,192,1)',
+    //         borderWidth: 1,
+    //       },
+    //     ],
+    //   });
 
     useEffect(()=>
     {
         const fetchFiveDayWeatherFromBackend =async() =>
         {
            
-            
-            // const latitude = localStorage.getItem('lat',lat);
-            // const longitude = localStorage.getItem('lon',lon);
-            const cityName = localStorage.getItem('cityName',city);
+            const cityName = localStorage.getItem('cityName');
             const apiUrl = `https://localhost:7194/api/FiveDayForecast/${cityName}`;
             
             const response = await fetch(apiUrl,
@@ -74,6 +83,21 @@ const ThreeHourForecast = () =>
                     const temperature = Math.floor(temp);
                     setTemperature(temperature);
                 }
+
+                // const labels = data.list.map(entry => entry.dt_txt);
+                // const temperatures = data.list.map(entry => entry.main.temp);
+                // setChart({
+                //     labels,
+                //     datasets: [
+                //       {
+                //         label: 'Temperature (°C)',
+                //         data: temperatures,
+                //         backgroundColor: 'rgba(75,192,192,0.4)',
+                //         borderColor: 'rgba(75,192,192,1)',
+                //         borderWidth: 1,
+                //       },
+                //     ],
+                //   });
 
                 const dateOne = new Date((data.list[1].dt) * 1000);
                     const formattedDateOne = dateOne.toLocaleString('en-US',
@@ -238,10 +262,11 @@ const ThreeHourForecast = () =>
 
     return( 
     <section>
-        <br/>
-        <div className="title"><p>Three Hour Forecast :</p></div>
+        
+        <div className="title"><div className="threeHourTitle">Three Hour Forecast :</div></div>
+     
         <div className="fiveDay">
-          
+          <div className="firstLineComponent">
             <div className="firstComponent">
             {date && temperature  &&(
                <> 
@@ -249,11 +274,11 @@ const ThreeHourForecast = () =>
                {date}
                {temperature <= 19 ?
                 (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/> 
+                <img src={cloud}  alt="" height='40px' id='clouds'/> 
                 </div>):
                 (
                     <div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div> 
                 )}
                 {temperature} °C </> )
@@ -266,9 +291,9 @@ const ThreeHourForecast = () =>
                <> {dateOne}
                {  temperatureOne <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
                 
                 {temperatureOne} °C </> )
@@ -279,9 +304,9 @@ const ThreeHourForecast = () =>
                <> {dateTwo}
                {  temperatureTwo <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
                 {temperatureTwo} °C </> )
             
@@ -291,21 +316,23 @@ const ThreeHourForecast = () =>
                <> {dateThree}
                 {  temperatureThree <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
                 {temperatureThree} °C </> )
             
             }</div>
+            </div>
+            <div className="secondLineComponent">
             <div className="fifthComponent">
             {dateFour && temperatureFour &&(
                <> {dateFour}
                {  temperatureFour <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
 
                 {temperatureFour} °C </> )
@@ -316,9 +343,9 @@ const ThreeHourForecast = () =>
                <> {dateFive}
                 {  temperatureFive <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
                 {temperatureFive} °C </> )
             
@@ -328,9 +355,9 @@ const ThreeHourForecast = () =>
                <> {dateSix}
                 {  temperatureSix <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
                 {temperatureSix} °C </> )
             
@@ -340,13 +367,14 @@ const ThreeHourForecast = () =>
                <> {dateSeven}
                 {  temperatureSeven <= 19 ?
                (<div className="weatherIcon">
-                <img src={cloud}  alt="" height='30px' id='clouds'/>
+                <img src={cloud}  alt="" height='40px' id='clouds'/>
                 </div>):(<div className="weatherIcon">
-                    <img src={contrast}  alt="" height='30px' id='contrast'/> 
+                    <img src={contrast}  alt="" height='40px' id='contrast'/> 
                     </div>)}
                 {temperatureSeven} °C </> )
             
             }</div>
+            </div>
             
             
         </div></section>

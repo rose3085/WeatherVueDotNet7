@@ -4,10 +4,13 @@
     flex-direction: row;
     margin-left:50px;
      margin-top:1rem;
+     flex-wrap: wrap;
 }
 .mainWeather
 {
     display:flex;
+    flex-wrap: wrap;
+   
 }
 .city
 {
@@ -46,24 +49,31 @@
 
 .temperature
 {
-    width:300px;
+    width:280px;
     font-size: 100px;
-    margin-left:2rem;
+    margin-left:4rem;
     margin-top:3rem;
     color:aliceblue;
 }
 .otherComponents
 {
     display:flex;
-    box-shadow: 2px 2px 15px rgba(0, 0, 0, 1);
+    box-shadow: 7px 7px 15px rgba(0, 0, 0, 1);
     flex-direction: column;
     border:1px solid ;
     border-color: aliceblue;
     border-radius:15px;
-   height:180px; width:470px;
+   height:180px; width:400px;
     text-align: center;
     margin-top:0.2rem;
-    margin-left:2rem;
+    margin-left:0.5rem;
+    transition: width 0.3s ease, height 0.3 ease;
+}
+.otherComponents:hover
+{
+    width:405px;
+    height:190px;
+
 }
 .otherFirstRow
 {

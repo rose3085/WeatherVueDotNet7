@@ -20,9 +20,9 @@ namespace WeatherVueDotNet7.DTO
         public string Password { get; set; }
 
         public string ConfirmPassword { get; set; }
-        [Required]
-        public string FirstName { get; set; }
-        [Required]
-        public string LastName { get; set; }
+        //[Required]
+        //public string FirstName { get; set; }
+        //[Required]
+        //public string LastName { get; set; }
     }
 }

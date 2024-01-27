@@ -12,8 +12,8 @@ using WeatherVueDotNet7.Data;
 namespace WeatherVueDotNet7.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20240112094124_ThirdMigration")]
-    partial class ThirdMigration
+    [Migration("20240126161210_newMigration")]
+    partial class newMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -176,14 +176,6 @@ namespace WeatherVueDotNet7.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
-
-                    b.Property<string>("FirstName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");

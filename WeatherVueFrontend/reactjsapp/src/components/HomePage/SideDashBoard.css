@@ -1,0 +1,51 @@
+:root
+{
+    --text-color: #fff;
+    --background-colour:  lightcyan;
+    --button-background: #ebfffc;
+}
+
+/* .navigationBar
+{
+    margin-top:15px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0,1);
+    border:1px solid ;
+    border-color: aliceblue;
+    color:#26273B;
+    border-radius:15px;
+    height:80px; width:130px;
+    text-align: center;
+    margin-left:1rem; 
+    margin-top:1rem;   
+    position : fixed;
+} */
+
+
+ .navigationBar
+ {
+    margin-top:15px;
+    position:fixed;
+    border-color: aliceblue;
+    border:1px solid ;
+    border-color: aliceblue;
+    border-radius:5px;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0,1);
+    height:80px; width:130px;
+    margin-left:1rem; 
+    
+    background-color: #26273B;
+ }
+
+.logOutNav
+{
+ margin-top:0.5rem;
+ margin-left:2rem;
+ cursor: pointer;
+}
+
+.deleteUser
+{
+    cursor: pointer;
+    margin-top:0.5rem;
+    margin-left:2rem;
+}
