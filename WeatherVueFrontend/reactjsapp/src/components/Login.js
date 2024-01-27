@@ -69,7 +69,7 @@ const Login = () => {
                         localStorage.setItem('userName', name);
 
                         //const jwtToken = data.token;
-                        document.cookie = `token=${data.token}; `;
+                        document.cookie = `token=${data.token} expires=Thu, 01 Jan 2025 00:00:00 UTC; path=/; secure; SameSite=None `;
                     //  return response.json();
                         setToken(true);
                         setLoader(true);
@@ -94,6 +94,7 @@ const Login = () => {
             });
       
     }
+    
 
     useEffect(()=>
     {

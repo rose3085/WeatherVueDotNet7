@@ -46,6 +46,29 @@ const Weather = () =>
         
     },[]);
 
+
+    useEffect(()=>
+    {
+      const handleGoingBack = (event)=>
+      {
+        window.history.forward();
+    //    event.preventDefault();
+    //    const message = "You are not allowed to go back" ;
+    //    event.returnValue= message;
+    //    return message;
+      };
+
+      window.addEventListener('popstate', handleGoingBack);
+
+     return () =>
+      {
+        window.removeEventListener('popstate', handleGoingBack);
+      };
+
+
+    },[]);
+
+
     return (
         <section>
           

@@ -29,7 +29,7 @@ const SideDashBoard = () =>
                 </button>
              </div> */}
              <div className="logOutNav" onClick={handleLogOutClicked}>LogOut</div>
-             <div className="deleteUser" onClick={handleDeleteClicked}>Delete</div>
+             <div className="deleteUser" onClick={handleDeleteClicked}>Delete Account</div>
             
            </div>
         </div>

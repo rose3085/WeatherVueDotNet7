@@ -84,11 +84,12 @@ body
 }
 
 .searchBar
-{ margin-top:1rem;
+{   margin-left:3rem;
+     margin-top:1rem;
     display:flex;
     background:var(--background-colour);
     border-radius: 30px;
-    width:550px;
+    width:480px;
 }
 .searchInput
 {
