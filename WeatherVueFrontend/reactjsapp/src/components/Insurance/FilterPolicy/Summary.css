@@ -1,0 +1,83 @@
+:root{
+    --background-color:aliceblue;
+    --background-color2 :#340CB9;
+    --main-color: #00A8A8;
+    --text-color: #05BD9F;
+    --secondary-color: #DE3B40;
+    --secondary-color1: #EFB034;
+    --secondary-color2 : #0EAA42;
+    --secondary-color3 :#379AE6;
+    --text-color2: rgb(60, 58, 58);
+}
+
+.mainComponentSummary
+{
+    color:black;
+    border: 1px solid;
+    padding :8px;
+    margin-left:2rem;
+    background-color: var(--background-color);
+    border-color : var(--background-color);
+    height:460px;
+    width:220px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+.summaryComponent
+{
+    margin-left:0.5rem;
+    margin-right:0.5rem;
+}
+.filters
+{
+    display : flex;
+    height:28px;
+}
+.filterImg
+{
+    margin-left:0.8rem;
+}
+
+.filterText
+{
+    margin-top:-0.1rem;
+    font-size:16px;
+    color:rgb(109, 108, 108);
+    margin-left:0.8rem;
+}
+
+.line
+{
+    width: 216px; 
+    height: 1px; 
+    margin-left:-0.4rem;
+    background-color: grey;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.name
+{
+    margin-top:0.5rem;
+   
+    font-size:17px;
+    font-weight: bold;
+}
+
+.policyTypes
+{
+    margin-top:0.5rem;
+   
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size:13px;
+}
+
+.coverName
+{
+    border: 1px solid;
+    border-color: grey;
+    padding :8px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: normal;
+    color:grey;
+}

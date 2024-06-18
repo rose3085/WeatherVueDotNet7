@@ -39,6 +39,8 @@ const CurrentWeather = () =>
     {
       
         const cityName = localStorage.getItem('cityName',city);
+        // const lat = localStorage.getItem('lat',lat);
+        // const lon = localStorage.getItem('lon',lon);
         const apiUrl = `https://localhost:7194/api/Forecast/${cityName}`;
           
 

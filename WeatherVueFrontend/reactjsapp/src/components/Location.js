@@ -16,55 +16,57 @@ import React,{useState, useEffect} from 'react';
 
     useEffect(()=>
         {
+            const city = "Butwal";
 
+            localStorage.setItem('cityName', city);
        
         // to check my current location and save to local storage
-        if(navigator.geolocation)
-        {
-            navigator.geolocation.getCurrentPosition(
-                 async (position) =>
-                { 
-                    const {latitude, longitude} = position.coords;
-                    setLocation({latitude, longitude});
-                    localStorage.setItem('lat',latitude);
-                    localStorage.setItem('lon',longitude);
-                     const apiKey = 'c7fee8cbe30d48d6be46999f591373c3';
-                    //const apiUrl = `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}&api_key=${apiKey}}`;
-                    const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
-                    await fetch(apiUrl)
-                        .then(response => 
+        // if(navigator.geolocation)
+        // {
+        //     navigator.geolocation.getCurrentPosition(
+        //          async (position) =>
+        //         { 
+        //             const {latitude, longitude} = position.coords;
+        //             setLocation({latitude, longitude});
+        //             localStorage.setItem('lat',latitude);
+        //             localStorage.setItem('lon',longitude);
+        //              const apiKey = 'c7fee8cbe30d48d6be46999f591373c3';
+        //             //const apiUrl = `https://geocode.maps.co/reverse?lat=${latitude}&lon=${longitude}&api_key=${apiKey}}`;
+        //             const apiUrl = `https://api.opencagedata.com/geocode/v1/json?q=${latitude}+${longitude}&key=${apiKey}`;
+        //             await fetch(apiUrl)
+        //                 .then(response => 
                             
-                            {
-                                if(response.ok){
-                                return response.json();
-                            }})
-                        .then(data => {
-                            if (data.results.length > 0) {
-                                const city = data.results[0].components.city;
-                                console.log('City:', city);
-                                setCity({city});
+        //                     {
+        //                         if(response.ok){
+        //                         return response.json();
+        //                     }})
+        //                 .then(data => {
+        //                     if (data.results.length > 0) {
+        //                         const city = data.results[0].components.city;
+        //                         console.log('City:', city);
+        //                         setCity({city});
                                 
-                                localStorage.setItem('cityName', city);
-                                console.log();
-                                // sendLocationToServer(city);
-                            } else {
-                                console.error('City not found');
-                            }
-                        })
-                        .catch(error => {
-                            console.error('Error getting city:', error.message);
-                        });
+        //                         localStorage.setItem('cityName', city);
+        //                         console.log();
+        //                         // sendLocationToServer(city);
+        //                     } else {
+        //                         console.error('City not found');
+        //                     }
+        //                 })
+        //                 .catch(error => {
+        //                     console.error('Error getting city:', error.message);
+        //                 });
                   
-                },
-                (error)=>
-                {
-                    console.error('Error getting location:', error.message);
-                }
-            );
-        }
-        else{
-            console.log('Geolocation is not supported by this browser.');
-        }
+        //         },
+        //         (error)=>
+        //         {
+        //             console.error('Error getting location:', error.message);
+        //         }
+        //     );
+        // }
+        // else{
+        //     console.log('Geolocation is not supported by this browser.');
+        // }
    
 },[]);
 

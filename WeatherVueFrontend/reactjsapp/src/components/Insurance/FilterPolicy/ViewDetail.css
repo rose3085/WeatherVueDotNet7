@@ -1,0 +1,170 @@
+.viewDetailsMain
+{
+    border:2px solid ;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-color:var(--background-color);
+    height:500px; width:700px;
+    margin-left:13rem;
+    margin-top:1rem;
+
+    
+   
+}
+.viewDetailsHeader
+{
+    background-color: #008a8a;
+    height:80px;
+    margin-top:-2.1rem; 
+    border-bottom: 2px solid rgb(152, 191, 229);
+    width :735px;
+   margin-left:-1.1rem;
+   
+}
+.cancelButtons
+{
+    margin-left:43.8rem;
+    width:25px;
+   
+  
+     
+}
+
+.cancel
+{
+     margin-top:1rem;
+
+} 
+
+.policyNameDiv
+{display: flex;
+text-align: center;}
+
+.policyName
+{
+    color:white;
+    font-size: 20px;
+    font-weight:bold;
+    margin-top:0.1rem;
+  
+}
+.otherDetails
+{
+    background-color: aliceblue;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height:450px;
+    width:730px;
+    margin-left:-1.1rem;
+}
+
+.policyDescription
+{
+    color:rgb(26, 25, 25);
+    font-size: 15px;
+    margin-left:1rem;
+    margin-top:1rem;   
+}
+.policyType
+{
+    color:rgb(26, 25, 25);
+    margin-left:1rem;
+    font-size: 14px;
+    font-weight: normal;
+    height:180px;
+    margin-top:2rem;
+}
+
+.descriptionLable
+{
+    color:rgb(41, 84, 84);
+    font-size: 16px;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+
+
+table {
+    width: 600px;
+    border: 2px solid #ddd;
+    color:rgb(42, 41, 41);
+    margin-left:3.8rem;
+    margin-top:2rem; border-radius: 10px;
+}
+
+th
+{
+    background-color: #448f8f;
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    
+}
+ td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  background-color:#9ec2c2;
+}
+
+td:hover {
+  background-color:rgb(212, 233, 251);
+}
+
+
+.viewDetailsFooter
+{
+    background-color:#9ec2c2;
+    height:150px;
+    margin-top:-2.1rem; 
+    border-top: 2px solid #9ec2c2;
+    width :735px;
+    margin-left:-1.1rem;
+    display:flex;
+}
+
+.companyName
+{
+    margin-top:0.5rem;
+    color:rgb(26, 84, 84);
+    margin-left:2.5rem;
+    font-size: 15px;
+   width:50%;
+
+}
+.policyLaunchDate
+{
+    margin-top:0.5rem;
+    color:rgb(103, 98, 98);
+   
+    font-size: 15px;
+    font-weight:normal;
+    display: flex;
+}
+.contactNumber
+{
+    margin-top:0.5rem;
+    color:rgb(103, 98, 98);
+    margin-left:1.5rem;
+    font-size: 15px;
+    font-weight:normal;
+    display: flex;
+}
+.needHelp
+{
+    font-size:15px;
+    color:rgb(26, 25, 25);
+    margin-left:0.4rem;
+}
+.callImage
+{
+    margin-right:0.5rem;
+    margin-left:-1rem;
+}
+.contactCompany
+{
+    margin-left:2rem;
+}

@@ -1,0 +1,254 @@
+.mainComponent
+{
+   
+    border:2px solid ;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-color:var(--background-color);
+    height:420px; width:700px;
+    margin-left:9rem;
+    margin-top:1rem;
+    text-align: center;
+   
+}
+
+
+.signUpComponents
+{
+    display : flex;
+}
+
+.signUpForm
+{
+    margin-left:4rem;
+    
+}
+
+.createAccountInfo
+{
+    margin-top:-2rem;
+    font-size: 15px;
+    color:grey;
+    font-weight:700;
+    font-style:inherit;
+    margin-left:-7.2rem;
+}
+.welcome
+{
+    font-size: 30px;
+    font-weight:1000;
+    font-style:inherit;
+    font-family: Arial, Helvetica, sans-serif;
+    color:var(--text-color2);
+    margin-top:4rem;
+    margin-left:-7rem;
+
+}
+.enterFirstName
+{
+    margin-top:1rem;
+    width:250px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color:black;
+}
+.enterLastName{
+    margin-top:0.5rem;
+    width:250px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color:black;
+}
+.enterEmail
+{
+    margin-top:0.5rem;
+    width:250px;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--background-color);
+    border-color: linear-gradient(to right, #ff7e5f, #feb47b);
+    transition: border-color 0.3s ease;
+    color:black;
+}
+.enterEmail:focus
+{
+    border-color:var(--background-color2);
+    
+}
+/* .customPhoneInput
+{
+    margin-top:0.5rem;
+    width:220px;
+    
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--background-color);
+   
+} */
+.react-tel-input .flag-dropdown {
+    margin-left: 18px; 
+  }
+.enterPassword {
+    color:black;
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--background-color);
+}
+.enterConfirmPassword
+{   color:black;
+    width:250px;
+    padding: 8px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: var(--background-color);
+}
+
+/* .nextButton
+{
+    width:250px;
+    font-size:1rem;
+    font-weight: 900;
+    font-style:normal;
+    background-color: var(--main-color);
+    margin-top:0.5rem;
+} */
+
+.alreadyAccount
+{
+    font-size: 15px;
+    font-weight:700;
+    font-style:inherit;
+    color:var(--text-color2);
+    margin-left:-4rem;
+}
+
+.navLogin
+{
+
+    font-size: 15px;
+    font-weight:700;
+    font-style:inherit;
+    color:var(--main-color);
+   cursor: pointer;
+    margin-top:-1.4rem;
+    margin-left:15rem;
+    transition: color 0.3s ease;
+}
+.navLogin:hover
+{
+    color:#DE3B40;
+    font-weight: bold;
+}
+.showPassword
+{
+    
+    color:grey;
+    font-size:10px;
+    cursor: pointer;
+    background-color: transparent;
+    border-color:transparent;
+   
+}
+.passwordVisible
+{
+    margin-left:12rem;
+    margin-bottom:0.5rem;
+}
+.show{
+    margin-left:13rem;
+    cursor: pointer;
+}
+.lefts
+{
+    background-color: transparent;
+    border-color:transparent;
+   
+}
+
+.nextPages
+{
+    display: flex;
+    margin-top:0rem;
+    
+}
+.nextPage
+{
+    display: flex;
+    margin-top:1rem;
+    
+}
+.showPassword:hover
+{
+    border-color: unset;
+    border: white;
+}
+.right2:hover
+{
+    border-color: unset;
+}
+.right:hover
+{
+    border-color: unset;
+    
+}
+.left:hover
+{
+    border-color: unset;
+}
+
+.lefts:hover
+{
+    border-color: unset;
+}
+.right
+{
+    background-color: transparent;
+    border-color:transparent;
+    margin-left:10rem;
+}
+.right2
+{
+    background-color: transparent;
+    border-color:transparent;
+    margin-left:14rem;
+   
+}
+.left
+{
+    background-color: transparent;
+    border-color:transparent;
+    margin-left:0.3rem;
+}
+
+.quotes
+{
+    font-size: 15px;
+    font-weight:700;
+    font-style:Arial;
+    color:var(--text-color2);
+}
+
+
+.lines
+{
+    width: 250px; 
+    height: 1px; 
+    margin-left:1.5rem;
+    background-color: grey;
+}

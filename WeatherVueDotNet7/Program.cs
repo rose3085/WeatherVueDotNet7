@@ -11,6 +11,13 @@ using WeatherVueDotNet7.Services.ForecastServices;
 using WeatherVueDotNet7.Services.LocationServices;
 using WeatherVueDotNet7.Services.AirQualityServices;
 using WeatherVueDotNet7.Services.FiveDayForecast;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Hosting;
+using Microsoft.AspNetCore.Authentication.Facebook;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -77,7 +84,26 @@ builder.Services
             ValidAudience = builder.Configuration["JWT:ValidAudience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
         };
+
+    })
+       .AddCookie()
+    .AddFacebook(options =>
+    {
+        //options.AppId = builder.Configuration["Authentication:Facebook:AppId"];
+        //options.AppSecret = builder.Configuration["Authentication:Facebook:AppSecret"];
+        options.AppId = "1118287442581276";
+        options.AppSecret = "c493827f3e552148409a2665dd66a6e8";
     });
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins", builder =>
+    {
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader();
+    });
+});
+
 
 
 
@@ -92,16 +118,36 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//enable cors
+//app.UseSpa(spa =>
+//{
+//    // Specify the path to the React app
+//    spa.Options.SourcePath = "WeatherVueFrontend/reactjsapp"; // Update this path based on your project structure
 
-app.UseCors(builder =>
-{
-    builder.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-});
+//    // If the environment is Development, use the React development server
+//    if (app.Environment.IsDevelopment())
+//    {
+//        spa.UseReactDevelopmentServer(npmScript: "start");
+//    }
+//});
+
+
+
+//app.UseCors(builder =>
+//{
+
+//    builder.AllowAnyOrigin()
+//            .AllowAnyMethod()
+//            .AllowAnyHeader()
+//            ;
+//});
+app.UseCors("AllowAllOrigins");
+
+app.UseAuthentication();
 
 app.UseAuthorization();
+
+
+
 
 app.MapControllers();
 

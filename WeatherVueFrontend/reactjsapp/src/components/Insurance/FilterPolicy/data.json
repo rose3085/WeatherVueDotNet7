@@ -1,0 +1,25 @@
+{ "datas":
+    [
+       
+        {
+          "companyName": "Parbhu Mahalaxmi Life Insurance",
+          "phoneNumber": "+977-1 5326856",
+          "website": "https://www.pmlil.com/",
+          "policyName": "Amulya Jeevan Beema",
+          "policyDescription": "A simple Whole life cum endowment policy providing financial security up to 100 years of age. It offers lifelong protection, security to fulfill financial obligations, tax benefits, additional coverage through riders, and profit sharing vested in the policy.",
+          "policyLaunchDate": "2074-07-30T00:00:00",
+          "policyType": "Whole Life Cum Endowment",
+          "minEntryAge": 16,
+          "maxEntryAge": 65,
+          "expiryAge": 70,
+          "minCover": 100000,
+          "maxCover": null,
+          "maturityBenefits": "Lifelong protection. Security to fulfill financial obligation. Tax Benefit: 40,000.00 annual premium is deductible while computing your annual taxable income. Additional Coverage throughout policy term in terms of Riders: Accidental Death Benefit (ADB), Total Permanent Disability (TPD) Benefit due to accident, and Premium Waiver Benefit (PWB). Sharing of Profit and vested in policy.",
+          "surrenderPolicy": null,
+          "paymentMode": "Yearly / Montly / Quaterly / Half Yearly",
+          "riskCommencementPeriod": null,
+          "riskCommencementDetails": null,
+          "policyTerm": 5
+        }
+      ]
+    }

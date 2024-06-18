@@ -1,0 +1,17 @@
+.policyResultComponent
+{
+    display:flex;
+    width:900px;
+    flex-direction: row;
+}
+
+.summary
+{
+   
+    width:150px;
+    margin-top:1rem;
+    margin-left:1.5rem;
+}
+
+
+
